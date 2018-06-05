@@ -11,6 +11,11 @@ gem 'webpacker', '~> 3.5'
 
 gem 'jbuilder', '~> 2.5'
 gem 'mini_magick', '~> 4.8'
+gem 'dotenv-rails'
+
+# Authenticate
+gem 'omniauth'
+gem 'omniauth-twitter'
 
 group :development, :test do
   gem 'awesome_print'
