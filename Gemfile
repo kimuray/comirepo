@@ -27,6 +27,7 @@ group :development, :test do
   gem 'spring'
   gem 'spring-commands-rspec'
   gem 'faker'
+  gem 'foreman'
 end
 
 group :development do
