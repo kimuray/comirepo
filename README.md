@@ -1,24 +1,20 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## バージョン
+* Ruby 2.5.1
+* Ruby on Rails 5.2.0
 
-Things you may want to cover:
+## 準備
 
-* Ruby version
+```
+$ git clone git@github.com:kimuray/book_concierge.git
+$ cd book_concierge
+$ bundle install --path vendor/bundle
+$ rails db:create db:migrate
+```
 
-* System dependencies
+## アプリケーション実行
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+$ foreman start
+```
