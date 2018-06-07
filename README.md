@@ -7,8 +7,8 @@
 ## 準備
 
 ```
-$ git clone git@github.com:kimuray/book_concierge.git
-$ cd book_concierge
+$ git clone git@github.com:kimuray/comirepo.git
+$ cd comirepo
 $ bundle install --path vendor/bundle
 $ rails db:create db:migrate
 ```

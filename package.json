@@ -1,5 +1,5 @@
 {
-  "name": "book_concierge",
+  "name": "comirepo",
   "private": true,
   "dependencies": {
     "@rails/webpacker": "3.5",
