@@ -12,6 +12,7 @@ gem 'webpacker', '~> 3.5'
 gem 'jbuilder', '~> 2.5'
 gem 'mini_magick', '~> 4.8'
 gem 'dotenv-rails'
+gem 'twitter'
 
 # Authenticate
 gem 'omniauth'

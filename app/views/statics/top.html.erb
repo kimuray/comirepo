@@ -1,7 +1,10 @@
-<h1>Statics#top</h1>
-<p>Find me in app/views/statics/top.html.erb</p>
+<h1>Tweet</h1>
 
 <% if logged_in? %>
-  <%= current_user %>
   <%= link_to 'ログアウト', '/logout', method: :delete %>
+
+  <%= form_with url: impressions_path, local: true do |form| %>
+    <%= text_field_tag :text %>
+    <%= submit_tag 'Tweet' %>
+  <% end %>
 <% end %>
