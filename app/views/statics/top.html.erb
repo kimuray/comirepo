@@ -1,2 +1,7 @@
 <h1>Statics#top</h1>
 <p>Find me in app/views/statics/top.html.erb</p>
+
+<% if logged_in? %>
+  <%= current_user %>
+  <%= link_to 'ログアウト', '/logout', method: :delete %>
+<% end %>
