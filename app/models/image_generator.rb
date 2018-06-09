@@ -10,11 +10,16 @@ class ImageGenerator
   end
 
   def create(text, file_name: 'comirepo')
+    setting(text)
+    image.write("#{OUTPUT_DIR}/#{file_name}.png")
+  end
+
+  def setting(text)
     image.combine_options do |option|
       option.gravity 'north'
       option.draw "text 0,0 '#{text}'"
       option.font USE_FONT
+      option.pointsize 25
     end
-    image.write("#{OUTPUT_DIR}/#{file_name}.png")
   end
 end
