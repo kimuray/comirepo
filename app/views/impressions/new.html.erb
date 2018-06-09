@@ -7,6 +7,13 @@
   </div>
 
   <div class="siimple-form-field">
+    <div class="siimple-form-field-label">感情</div>
+    <%= collection_check_boxes :impression, :emotion_ids, Emotion.order(:id), :id, :name do |box| %>
+      <%= box.label { box.check_box + box.text } %>
+    <% end %>
+  </div>
+
+  <div class="siimple-form-field">
     <div class="siimple-form-field-label">ベストシーン</div>
     <%= form.text_field :best_scene, class: 'siimple-input' %>
   </div>

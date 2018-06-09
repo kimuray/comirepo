@@ -23,6 +23,6 @@ class ImpressionsController < ApplicationController
   end
 
   def impression_params
-    params.fetch(:impression, {}).permit(:comic_title, :best_scene, :report)
+    params.fetch(:impression, {}).permit(:comic_title, :best_scene, :report, { emotion_ids: [] })
   end
 end
