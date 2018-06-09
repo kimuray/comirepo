@@ -1,5 +1,6 @@
 class ImpressionsController < ApplicationController
-  before_action :set_twitter_api
+  before_action :authenticate_user!
+  before_action :set_twitter_api, only: :create
 
   def new
   end
