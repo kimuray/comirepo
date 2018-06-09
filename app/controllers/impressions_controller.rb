@@ -1,6 +1,9 @@
 class ImpressionsController < ApplicationController
   before_action :set_twitter_api
 
+  def new
+  end
+
   def create
     @twitter_api.tweet(params[:text])
     redirect_to root_url

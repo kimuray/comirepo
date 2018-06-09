@@ -1,0 +1,12 @@
+<%= link_to 'ログアウト', logout_path, method: :delete %>
+<h1>投稿</h1>
+<%= form_with url: impressions_path, local: true do |form| %>
+  <div class="siimple-form-field">
+    <div class="siimple-form-field-label">Tweet</div>
+    <%= text_area_tag :text, '', { class: 'siimple-input' } %>
+  </div>
+
+  <div class="siimple-form-field">
+    <%= submit_tag 'Tweet', class: 'siimple-btn siimple-btn--blue' %>
+  </div>
+<% end %>
