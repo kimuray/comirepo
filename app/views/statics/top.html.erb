@@ -1,10 +1,9 @@
-<h1>Tweet</h1>
-
-<% if logged_in? %>
-  <%= link_to 'ログアウト', '/logout', method: :delete %>
-
-  <%= form_with url: impressions_path, local: true do |form| %>
-    <%= text_field_tag :text %>
-    <%= submit_tag 'Tweet' %>
-  <% end %>
-<% end %>
+<div class="top">
+  <div class="top-container">
+    <% unless logged_in? %>
+      <%= link_to 'Twitterでログイン', '/auth/twitter', class: 'siimple-btn siimple-btn--blue' %>
+    <% else %>
+      <%= link_to 'ログアウト', '/logout', method: :delete, class: 'siimple-btn siimple-btn--red' %>
+    <% end %>
+  </div>
+</div>
