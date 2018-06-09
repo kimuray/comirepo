@@ -1,8 +1,4 @@
-<% content_for :load_vuejs do %>
-  <%= javascript_pack_tag 'impression_vue' %>
-<% end %>
-
-<%= link_to 'ログアウト', logout_path, method: :delete %>
+<%= link_to 'ログアウト', logout_path, method: :delete %><br />
 
 <div id="js-capture-zone">
   <h3>タイトル</h3>
@@ -19,5 +15,3 @@
   <h3>感想</h3>
   <%= simple_format(@impression.report) %>
 </div>
-
-<img src="" id="test-image" />
