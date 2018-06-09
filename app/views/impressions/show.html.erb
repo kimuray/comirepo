@@ -1,0 +1,17 @@
+<%= link_to 'ログアウト', logout_path, method: :delete %>
+
+<div id="capture-zone">
+  <h3>タイトル</h3>
+  <%= @impression.comic_title %>
+
+  <h3>感情</h3>
+  <% @impression.emotions.each do |emotion| %>
+    <p><%= emotion.name %></p>
+  <% end %>
+
+  <h3>ベストシーン</h3>
+  <%= @impression.best_scene %>
+
+  <h3>感想</h3>
+  <%= simple_format(@impression.report) %>
+</div>

@@ -1,6 +1,10 @@
 class ImpressionsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: :show
   before_action :set_twitter_api, only: :create
+
+  def show
+    @impression = Impression.find(params[:id])
+  end
 
   def new
     @impression = Impression.new
