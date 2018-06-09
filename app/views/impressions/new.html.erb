@@ -1,9 +1,19 @@
 <%= link_to 'ログアウト', logout_path, method: :delete %>
 <h1>投稿</h1>
-<%= form_with url: impressions_path, local: true do |form| %>
+<%= form_with model: @impression, url: impressions_path, local: true do |form| %>
   <div class="siimple-form-field">
-    <div class="siimple-form-field-label">Tweet</div>
-    <%= text_area_tag :text, '', { class: 'siimple-input' } %>
+    <div class="siimple-form-field-label">タイトル</div>
+    <%= form.text_field :comic_title, class: 'siimple-input' %>
+  </div>
+
+  <div class="siimple-form-field">
+    <div class="siimple-form-field-label">ベストシーン</div>
+    <%= form.text_field :best_scene, class: 'siimple-input' %>
+  </div>
+
+  <div class="siimple-form-field">
+    <div class="siimple-form-field-label">感想</div>
+    <%= form.text_area :report, class: 'siimple-input' %>
   </div>
 
   <div class="siimple-form-field">

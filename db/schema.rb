@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_07_133900) do
+ActiveRecord::Schema.define(version: 2018_06_09_053214) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "impressions", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "comic_title"
+    t.string "best_scene"
+    t.text "report"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_impressions_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "provider"
