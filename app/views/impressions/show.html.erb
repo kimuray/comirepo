@@ -1,6 +1,11 @@
 <% set_meta_tags title: "#{@impression.comic_title}の感想" %>
 <% set_meta_tags description: "#{@impression.report}" %>
-<% set_meta_tags twitter: { card: @impression.capture_url } %>
+<% set_meta_tags twitter: { card: 'summary_large_image' }%>
+<% set_meta_tags twitter: { title: "#{@impression.comic_title}の感想" }%>
+<% set_meta_tags twitter: { description: @impression.report.gsub(/[\r\n]/, "") } %>
+<% set_meta_tags twitter: { url: impression_url(@impression) } %>
+<% set_meta_tags twitter: { site: '@kimuraysp' } %>
+<% set_meta_tags twitter: { domain: 'kuriyama-app.herokuapp.com' } %>
 <% set_meta_tags og: { url: impression_url(@impression) } %>
 <% set_meta_tags og: { title: "#{@impression.comic_title}の感想" } %>
 <% set_meta_tags og: { description: @impression.report.gsub(/[\r\n]/, "") } %>
