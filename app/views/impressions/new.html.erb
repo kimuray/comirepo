@@ -36,5 +36,5 @@
       <input @click.prevent="onSubmit" type="submit" value="Tweet" data-disable-with="Tweet" class="siimple-btn siimple-btn--blue">
     </div>
   <% end %>
-  <capture-area></capture-area>
+  <capture-area :comic-title="comicTitle" :selected-emotions="emotions" :best-scene="bestScene" :report="report"></capture-area>
 </div>

@@ -8,6 +8,11 @@ module.exports = {
   test: /\.vue(\.erb)?$/,
   use: [{
     loader: 'vue-loader',
-    options: { extractCSS }
+    options: {
+      extractCSS: true,
+      loaders: {
+        scss: 'vue-style-loader!css-loader!postcss-loader!sass-loader',
+      },
+    }
   }]
 }

@@ -7,8 +7,6 @@ Rails.application.routes.draw do
   resources :impressions, only: %w(new create show)
 
   namespace :api, { format: 'json' } do
-    resources :impressions, only: [] do
-      patch :upload_capture, on: :member
-    end
+    resources :emotions, only: :index
   end
 end
