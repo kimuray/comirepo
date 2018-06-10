@@ -1,6 +1,7 @@
 import Vue from 'vue/dist/vue.esm';
 import html2canvas from 'html2canvas';
 import CaptureArea from './components/impressions/CaptureArea.vue';
+import ImpressionApi from './api/impressions';
 
 new Vue({
   el: '#js-impression-new',
@@ -8,19 +9,24 @@ new Vue({
     CaptureArea,
   },
   data: {
-    comicTitle: '',
-    emotions: [],
-    bestScene: '',
-    report: '',
+    formData: {
+      comicTitle: '',
+      emotions: [],
+      bestScene: '',
+      report: '',
+      captureImage: '',
+    },
   },
   methods: {
-    captureHTML() {
-      const element = this.$el;
-      html2canvas(element).then(canvas => {
-        document.getElementById('test-image').src = canvas.toDataURL();
-      });
-    },
     onSubmit() {
+      const element = this.$el.querySelector('#js-capture-area');
+      const _this = this;
+      html2canvas(element).then(canvas => {
+        _this.captureImage = canvas.toDataURL();
+        ImpressionApi.create(_this.formData).then(res => {
+          window.location.href = `/impressions/${res.data.id}`;
+        });
+      });
     },
   },
 });

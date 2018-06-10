@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :impressions, only: %w(new create show)
 
   namespace :api, { format: 'json' } do
+    resources :impressions, only: :create
     resources :emotions, only: :index
   end
 end
