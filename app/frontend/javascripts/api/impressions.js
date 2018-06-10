@@ -7,6 +7,7 @@ export default {
         comic_title: params.comicTitle,
         emotion_ids: params.emotions,
         best_scene: params.bestScene,
+        capture: params.captureImage,
         report: params.report,
       },
     });

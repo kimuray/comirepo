@@ -9,6 +9,6 @@ class Api::ImpressionsController < ApplicationController
   private
 
   def impression_params
-    params.fetch(:impression, {}).permit(:comic_title, :best_scene, :report, emotion_ids: [])
+    params.fetch(:impression, {}).permit(:comic_title, :best_scene, :report, :capture, emotion_ids: [])
   end
 end

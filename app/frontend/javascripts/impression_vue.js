@@ -22,7 +22,7 @@ new Vue({
       const element = this.$el.querySelector('#js-capture-area');
       const _this = this;
       html2canvas(element).then(canvas => {
-        _this.captureImage = canvas.toDataURL();
+        _this.formData.captureImage = canvas.toDataURL();
         ImpressionApi.create(_this.formData).then(res => {
           window.location.href = `/impressions/${res.data.id}`;
         });

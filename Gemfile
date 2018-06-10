@@ -13,6 +13,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'mini_magick', '~> 4.8'
 gem 'dotenv-rails'
 gem 'twitter'
+gem 'carrierwave'
+gem 'carrierwave-base64'
 
 # Authenticate
 gem 'omniauth'

@@ -3,5 +3,5 @@ class Impression < ApplicationRecord
   has_many :selecting_emotions, dependent: :destroy
   has_many :emotions, through: :selecting_emotions
 
-  has_one_attached :capture
+  mount_base64_uploader :capture, CaptureUploader
 end
