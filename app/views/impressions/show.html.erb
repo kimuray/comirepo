@@ -1,3 +1,11 @@
+<% set_meta_tags title: "#{@impression.comic_title}の感想" %>
+<% set_meta_tags description: "#{@impression.report}" %>
+<% set_meta_tags twitter: { card: @impression.capture_url } %>
+<% set_meta_tags og: { url: impression_url(@impression) } %>
+<% set_meta_tags og: { title: "#{@impression.comic_title}の感想" } %>
+<% set_meta_tags og: { description: @impression.report.gsub(/[\r\n]/, "") } %>
+<% set_meta_tags og: { image: @impression.capture_url } %>
+
 <%= link_to 'ログアウト', logout_path, method: :delete %><br />
 
 <div id="js-capture-zone">

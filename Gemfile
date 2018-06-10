@@ -13,6 +13,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'mini_magick', '~> 4.8'
 gem 'dotenv-rails'
 gem 'twitter'
+gem 'meta-tags'
 
 # Uploader
 gem 'fog'
