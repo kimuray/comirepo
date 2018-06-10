@@ -1,9 +1,15 @@
 <div class="top">
   <div class="top-container">
-    <% unless logged_in? %>
-      <%= link_to 'Twitterでログイン', '/auth/twitter', class: 'siimple-btn siimple-btn--blue' %>
-    <% else %>
-      <%= link_to 'ログアウト', '/logout', method: :delete, class: 'siimple-btn siimple-btn--red' %>
-    <% end %>
+    <div class="top-logo">
+      <%= image_tag asset_pack_path('images/top_logo.png'), class: 'top-logo-image' %>
+    </div>
+
+    <div class="top-flex-item">
+      <% unless logged_in? %>
+        <%= link_to 'Twitterでログイン', '/auth/twitter', class: 'siimple-btn siimple-btn--blue' %>
+      <% else %>
+        <%= link_to 'ログアウト', '/logout', method: :delete, class: 'siimple-btn siimple-btn--red' %>
+      <% end %>
+    </div>
   </div>
 </div>

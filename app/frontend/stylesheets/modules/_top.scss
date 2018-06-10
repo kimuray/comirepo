@@ -9,9 +9,18 @@
   @at-root {
     &-container {
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       height: 100vh;
     }
+  }
+}
+
+@media screen and(max-width: 480px) {
+  .top-logo-image {
+    display: block;
+    width: 95%;
+    margin: 0 auto;
   }
 }
