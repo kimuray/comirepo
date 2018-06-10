@@ -1,0 +1,73 @@
+.capture {
+  width: 600px;
+  background: linear-gradient(#d5eaff, #f4faff);
+
+  @at-root {
+    &-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    &-contents {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 80%;
+    }
+
+    &-field {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      margin-top: 15px;
+    }
+
+    &-field_emotion {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    &-emotion-item {
+      width: 25%;
+      display: flex;
+    }
+
+    &-comic-title {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 5px;
+      word-wrap: break-word;
+    }
+
+    &-sub-title {
+      font-size: 1em;
+      font-weight: 400;
+      margin: 0;
+    }
+
+    &-message {
+      width: 100%;
+      margin: 10px 0 0 0;
+      text-align: center;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+    }
+
+    &-input {
+      border: 1px dashed #222;
+      padding: 10px 20px;
+      border-radius: 8px;
+      background-color: #fff;
+    }
+  }
+}
