@@ -1,1 +1,33 @@
-.
+.post-form {
+  display: flex;
+  justify-content: center;
+
+  @at-root {
+    &-title {
+      text-align: center;
+    }
+
+    &-container {
+      width: 95%;
+    }
+
+    &-fluid {
+      width: calc(100% - 20px);
+    }
+
+    &-emotions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    &-emotions-item {
+      width: 25%;
+    }
+
+    &-button {
+      width: 100%;
+    }
+  }
+}
