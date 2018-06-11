@@ -1,0 +1,13 @@
+.show {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  @at-root {
+    &-capture {
+      height: auto;
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+}

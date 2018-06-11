@@ -12,21 +12,13 @@
 <% set_meta_tags og: { image: @impression.capture_url } %>
 
 <%= link_to 'ログアウト', logout_path, method: :delete %><br />
-
-<div id="js-capture-zone">
-  <h3>タイトル</h3>
-  <%= @impression.comic_title %>
-
-  <h3>感情</h3>
-  <% @impression.emotions.each do |emotion| %>
-    <p><%= emotion.name %></p>
-  <% end %>
-
-  <h3>ベストシーン</h3>
-  <%= @impression.best_scene %>
-
-  <h3>感想</h3>
-  <%= simple_format(@impression.report) %>
+<div class="show">
+  <div class="siimple-box">
+    <h2 class="siimple-box-subtitle"><%= @impression.comic_title %>の感想</h1>
+    <%= image_tag @impression.capture_url, class: 'show-capture' %>
+    <div class="siimple-box-detail">
+      <%= simple_format(@impression.report) %>
+    </div>
+    <%= link_to '投稿画面に戻る', new_impression_path %>
+  </div>
 </div>
-
-<%= image_tag @impression.capture_url %>
