@@ -8,6 +8,8 @@ require.context('../images', true, /\.(png|jpg|jpeg|svg)$/);
 Rails.start();
 Vue.use(ElementUI);
 
-new Vue({
-  el: '#js-header',
-});
+if (!!document.querySelector('#js-header')) {
+  new Vue({
+    el: '#js-header',
+  });
+}

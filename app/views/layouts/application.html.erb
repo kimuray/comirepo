@@ -9,29 +9,31 @@
   </head>
 
   <body>
-    <header id="js-header" class="header">
-      <div class="header-container">
-        <%= image_tag asset_pack_path('images/logo.png'), class: 'header-logo' %>
-        <div class="header-menu-button">
-          <el-dropdown trigger="click">
-            <span class="el-dropdown-link header-menu-button-link">
-              Menu<i class="el-icon-arrow-down el-icon--right"></i>
-            </span>
-            <el-dropdown-menu slot="dropdown">
-              <el-dropdown-item>
-                <%= link_to '感想投稿', new_impression_path, class: 'header-menu-link' %>
-              </el-dropdown-item>
-              <el-dropdown-item>
-                <%= link_to 'マイページ', user_path(current_user), class: 'header-menu-link' %>
-              </el-dropdown-item>
-              <el-dropdown-item>
-                <%= link_to 'ログアウト', logout_path, method: :delete, class: 'header-menu-link' %>
-              </el-dropdown-item>
-            </el-dropdown-menu>
-          </el-dropdown>
+    <% if logged_in? %>
+      <header id="js-header" class="header">
+        <div class="header-container">
+          <%= image_tag asset_pack_path('images/logo.png'), class: 'header-logo' %>
+          <div class="header-menu-button">
+            <el-dropdown trigger="click">
+              <span class="el-dropdown-link header-menu-button-link">
+                Menu<i class="el-icon-arrow-down el-icon--right"></i>
+              </span>
+              <el-dropdown-menu slot="dropdown">
+                <el-dropdown-item>
+                  <%= link_to '感想投稿', new_impression_path, class: 'header-menu-link' %>
+                </el-dropdown-item>
+                <el-dropdown-item>
+                  <%= link_to 'マイページ', user_path(current_user), class: 'header-menu-link' %>
+                </el-dropdown-item>
+                <el-dropdown-item>
+                  <%= link_to 'ログアウト', logout_path, method: :delete, class: 'header-menu-link' %>
+                </el-dropdown-item>
+              </el-dropdown-menu>
+            </el-dropdown>
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
+    <% end %>
 
     <%= yield %>
 
