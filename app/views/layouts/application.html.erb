@@ -9,11 +9,21 @@
   </head>
 
   <body>
-    <header class="header">
+    <header id="js-header" class="header">
       <div class="header-container">
         <%= image_tag asset_pack_path('images/logo.png'), class: 'header-logo' %>
         <div class="header-menu-button">
-          <span>Menu</span>
+          <el-dropdown trigger="click">
+            <span class="el-dropdown-link">
+              Menu<i class="el-icon-arrow-down el-icon--right"></i>
+            </span>
+            <el-dropdown-menu slot="dropdown">
+              <el-dropdown-item>マイページ</el-dropdown-item>
+              <el-dropdown-item>
+                <a rel="nofollow" data-method="delete" href="/logout">ログアウト</a>
+              </el-dropdown-item>
+            </el-dropdown-menu>
+          </el-dropdown>
         </div>
       </div>
     </header>
