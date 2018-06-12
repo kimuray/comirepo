@@ -19,6 +19,9 @@
             </span>
             <el-dropdown-menu slot="dropdown">
               <el-dropdown-item>
+                <%= link_to '感想投稿', new_impression_path %>
+              </el-dropdown-item>
+              <el-dropdown-item>
                 <%= link_to 'マイページ', user_path(current_user) %>
               </el-dropdown-item>
               <el-dropdown-item>

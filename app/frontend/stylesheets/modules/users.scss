@@ -1,0 +1,54 @@
+.users {
+  width: 95%;
+  margin: 0 auto;
+
+  @at-root {
+    &-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-flow: column nowrap;
+      margin: 20px auto;
+    }
+
+    &-image {
+      display: block;
+      border-radius: 50%;
+      border: 2px solid #fff;
+    }
+
+    &-impressions-list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-flow: column nowrap;
+      list-style: none;
+      padding: 0;
+    }
+
+    &-impressions-list-item {
+      width: calc(100% - 20px);
+      padding: 10px;
+      background: #fff;
+      border-radius: 10px;
+      margin: 0px 10px 10px;
+      border: 1px solid #f0f0f0;
+      box-shadow: 2px 2px 8px -1px rgba(0, 0, 0, 0.05);
+    }
+
+    &-impressions-on {
+      font-size: .8em;
+    }
+
+    &-impressions-title {
+      font-size: 1.1em;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    &-impressions-content {
+      font-size: .9em;
+      margin-top: 5px;
+    }
+  }
+}
