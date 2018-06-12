@@ -12,12 +12,12 @@
 <% set_meta_tags og: { image: @impression.capture_url } %>
 
 <div class="show">
-  <div class="siimple-box">
-    <h2 class="siimple-box-subtitle"><%= @impression.comic_title %>の感想</h1>
-    <%= image_tag @impression.capture_url, class: 'show-capture' %>
-    <div class="siimple-box-detail">
-      <%= simple_format(@impression.report) %>
-    </div>
-    <%= link_to '投稿画面に戻る', new_impression_path %>
+  <h2 class="siimple-box-subtitle"><%= @impression.comic_title %>の感想</h1>
+  <%= image_tag @impression.capture_url, class: 'show-capture' %>
+  <div class="siimple-box siimple-box--blue users-box">
+    <%= image_tag @impression.user.avater, class: 'users-image' %>
+    <h1 class="siimple-box-subtitle"><%= @impression.user.nickname %></h1>
+    <p>頑張って投稿していきます</p>
+    <%= link_to "#{@impression.user.nickname}さんのページ", user_path(@impression.user), class: 'siimple-btn siimple-btn--grey' %>
   </div>
 </div>

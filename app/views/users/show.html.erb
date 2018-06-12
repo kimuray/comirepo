@@ -9,14 +9,16 @@
     <p>投稿した感想一覧</p>
     <ul class="users-impressions-list">
       <% @user.impressions.each do |impression| %>
-        <li class="users-impressions-list-item">
-          <p class="users-impressions-on"><%= impression.created_at %></p>
-          <p class="users-impressions-title"><%= impression.comic_title %>の感想</p>
-          <p class="users-impressions-content"><%= impression.report %></p>
-          <% impression.emotions do |emotion| %>
-            <span class="siimple-tag siimple-tag--blue"><%= emotion.name %></span>
-          <% end %>
-        </li>
+        <%= link_to impression_path(impression), class: 'users-impressions-list-item' do %>
+          <li>
+            <p class="users-impressions-on"><%= l(impression.created_at, format: :date) %></p>
+            <p class="users-impressions-title"><%= impression.comic_title %>の感想</p>
+            <p class="users-impressions-content"><%= impression.report %></p>
+            <% impression.emotions.each do |emotion| %>
+              <span class="siimple-tag siimple-tag--blue"><%= emotion.name %></span>
+            <% end %>
+          </li>
+        <% end %>
       <% end %>
     </ul>
   </div>

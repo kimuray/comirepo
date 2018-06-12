@@ -1,7 +1,6 @@
 .show {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  width: 95%;
+  margin: 0 auto;
 
   @at-root {
     &-capture {
