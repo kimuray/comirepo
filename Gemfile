@@ -14,6 +14,7 @@ gem 'mini_magick', '~> 4.8'
 gem 'dotenv-rails'
 gem 'twitter'
 gem 'meta-tags'
+gem 'friendly_id', '~> 5.1.0'
 
 # Uploader
 gem 'fog'

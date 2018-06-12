@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  extend FriendlyId
+  friendly_id :nickname, use: :slugged
+
   has_many :impressions
 
   def self.find_or_create_from_auth_hash(auth_hash)

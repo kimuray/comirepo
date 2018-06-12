@@ -18,7 +18,9 @@
               Menu<i class="el-icon-arrow-down el-icon--right"></i>
             </span>
             <el-dropdown-menu slot="dropdown">
-              <el-dropdown-item>マイページ</el-dropdown-item>
+              <el-dropdown-item>
+                <%= link_to 'マイページ', user_path(current_user) %>
+              </el-dropdown-item>
               <el-dropdown-item>
                 <a rel="nofollow" data-method="delete" href="/logout">ログアウト</a>
               </el-dropdown-item>
