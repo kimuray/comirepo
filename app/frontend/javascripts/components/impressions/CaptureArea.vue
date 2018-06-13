@@ -9,11 +9,7 @@
 
       <div class="capture-field_emotion">
         <div v-for="emotion in emotions" class="capture-emotion-item">
-          <div class="siimple-checkbox">
-            <input :id="`emotion${emotion.id}`" type="checkbox" />
-            <label :for="`emotion${emotion.id}`" style="background: #fff;"></label>
-          </div>
-          <label class="siimple-label">{{ emotion.name }}</label>
+          <label :class="`capture-tag ${isCheckEmotion}`">{{ emotion.name }}</label>
         </div>
       </div>
 
@@ -45,6 +41,11 @@ export default {
     return {
       emotions: [],
     };
+  },
+  computed: {
+    isCheckEmotion: () => {
+      return 'siimple-tag siimple-tag--teal';
+    }
   },
   created() {
     axios.get(`/emotions`).then(res => {

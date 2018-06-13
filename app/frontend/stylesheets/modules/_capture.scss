@@ -1,8 +1,8 @@
 .capture {
   width: 600px;
   background: linear-gradient(#d5eaff, #f4faff);
-  position: absolute;
-  left: -1000px;
+  // position: absolute;
+  // left: -1000px;
 
   @at-root {
     &-container {
@@ -40,8 +40,14 @@
     }
 
     &-emotion-item {
-      width: 25%;
+      width: 20%;
+      margin-bottom: 10px;
       display: flex;
+      align-items: center;
+    }
+
+    &-emotion-icon {
+      width: 20px;
     }
 
     &-comic-title {
@@ -70,6 +76,10 @@
       padding: 10px 20px;
       border-radius: 8px;
       background-color: #fff;
+    }
+
+    &-tag {
+      font-size: 1em;
     }
   }
 }
