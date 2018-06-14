@@ -1,8 +1,8 @@
 .capture {
   width: 600px;
   background: linear-gradient(#d5eaff, #f4faff);
-  // position: absolute;
-  // left: -1000px;
+  position: absolute;
+  left: -1000px;
 
   @at-root {
     &-container {

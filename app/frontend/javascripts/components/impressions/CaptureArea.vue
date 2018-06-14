@@ -9,7 +9,7 @@
 
       <div class="capture-field_emotion">
         <div v-for="emotion in emotions" class="capture-emotion-item">
-          <label :class="`capture-tag ${isCheckEmotion}`">{{ emotion.name }}</label>
+          <label class="capture-tag" :data-emotion-id="emotion.id">{{ emotion.name }}</label>
         </div>
       </div>
 
@@ -42,15 +42,28 @@ export default {
       emotions: [],
     };
   },
-  computed: {
-    isCheckEmotion: () => {
-      return 'siimple-tag siimple-tag--teal';
-    }
+  watch: {
+    selectedEmotions(emotions) {
+      this.addCheckStyle(emotions);
+    },
   },
   created() {
     axios.get(`/emotions`).then(res => {
       this.emotions = res.data;
     });
   },
+  methods: {
+    addCheckStyle(emotions) {
+      this.$el.querySelectorAll('[data-emotion-id]').forEach(element => {
+        if (emotions.includes(element.dataset.emotionId)) {
+          element.classList.add('siimple-tag');
+          element.classList.add('siimple-tag--teal');
+        } else {
+          element.classList.remove('siimple-tag');
+          element.classList.remove('siimple-tag--teal');
+        }
+      });
+    },
+  }
 };
 </script>
