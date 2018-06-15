@@ -4,7 +4,7 @@ class Api::ImpressionsController < ApplicationController
   def create
     @impression = current_user.impressions.build(impression_params)
     if @impression.save
-      @twitter_api.tweet(post_message)
+      # @twitter_api.tweet(post_message)
       render json: @impression
     end
   end

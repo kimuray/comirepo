@@ -6,7 +6,7 @@
 
 <div id="js-impression-new" class="post-form">
   <div class="post-form-container">
-    <%= form_with model: @impression, url: impressions_path, local: true do |form| %>
+    <%= form_with model: @impression, url: api_impressions_path, local: true do |form| %>
       <div class="siimple-form-field">
         <div class="siimple-form-field-label">マンガのタイトル</div>
         <input type="text" v-model="formData.comicTitle" name="impression[comic_title]" class="siimple-input post-form-fluid" />
