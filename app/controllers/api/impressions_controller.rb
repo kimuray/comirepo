@@ -6,6 +6,8 @@ class Api::ImpressionsController < ApplicationController
     if @impression.save
       # @twitter_api.tweet(post_message)
       render json: @impression
+    else
+      render json: @impression, status: 422
     end
   end
 
