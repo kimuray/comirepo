@@ -32,7 +32,7 @@ new Vue({
           window.location.href = `/impressions/${res.data.id}`;
         })
         .catch(err => {
-          console.log(err)
+          console.log(err.response.data)
         });
     },
   },

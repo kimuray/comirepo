@@ -7,7 +7,7 @@ class Api::ImpressionsController < ApplicationController
       # @twitter_api.tweet(post_message)
       render json: @impression
     else
-      render json: @impression, status: 422
+      render json: optimize_error_response(@impression.errors), status: 422
     end
   end
 
@@ -27,5 +27,13 @@ class Api::ImpressionsController < ApplicationController
 
       #こみれぽ #{impression_url(@impression)}
     TWEET
+  end
+
+  def optimize_error_response(errors)
+    errors.map do |key, value|
+      res_key = key.to_s.camelize
+      res_key[0] = res_key[0].downcase
+      [res_key, value]
+    end.to_h
   end
 end
