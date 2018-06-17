@@ -16,6 +16,20 @@ new Vue({
       report: '',
       captureImage: '',
     },
+    errors: {
+      comicTitle: {
+        hasError: false,
+        message: ''
+      },
+      bestScene: {
+        hasError: false,
+        message: ''
+      },
+      report: {
+        hasError: false,
+        message: ''
+      },
+    }
   },
   methods: {
     onSubmit() {
