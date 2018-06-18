@@ -6,10 +6,15 @@
 
 <div id="js-impression-new" class="post-form">
   <div class="post-form-container">
-    <%= form_with model: @impression, url: api_impressions_path, local: true do |form| %>
+    <%= form_with model: @impression, url: api_impressions_path, local: true, html: { '@submit.prevent' => 'onSubmit' } do |form| %>
       <div class="siimple-form-field">
         <div class="siimple-form-field-label">マンガのタイトル</div>
-        <input type="text" v-model="formData.comicTitle" name="impression[comic_title]" class="siimple-input post-form-fluid" />
+        <input
+          type="text"
+          v-model="formData.comicTitle"
+          name="impression[comic_title]"
+          class="siimple-input post-form-fluid"
+          required>
         <p v-if="errors.comicTitle.hasError">{{ errors.comicTitle.message }}</p>
       </div>
 
@@ -19,7 +24,11 @@
           <% Emotion.order(:id).each do |emotion| %>
             <div class="post-form-emotions-item">
               <div class="siimple-checkbox">
-                <input id="emotion<%= emotion.id %>" type="checkbox" v-model="formData.emotions" value="<%= emotion.id %>" />
+                <input
+                  id="emotion<%= emotion.id %>"
+                  type="checkbox"
+                  v-model="formData.emotions"
+                  value="<%= emotion.id %>" />
                 <label for="emotion<%= emotion.id %>"></label>
               </div>
               <label class="siimple-label"><%= emotion.name %></label>
@@ -30,18 +39,28 @@
 
       <div class="siimple-form-field">
         <div class="siimple-form-field-label">心揺さぶられたシーン</div>
-        <input type="text" v-model="formData.bestScene" name="impression[best_scene]" class="siimple-input post-form-fluid">
+        <input
+          type="text"
+          v-model="formData.bestScene"
+          name="impression[best_scene]"
+          class="siimple-input post-form-fluid"
+          required>
         <p v-if="errors.bestScene.hasError">{{ errors.bestScene.message }}</p>
       </div>
 
       <div class="siimple-form-field">
         <div class="siimple-form-field-label">感想</div>
-        <textarea v-model="formData.report" name="impression[report]" class="siimple-textarea post-form-fluid" rows="10"></textarea>
+        <textarea
+          v-model="formData.report"
+          name="impression[report]"
+          class="siimple-textarea post-form-fluid"
+          rows="10"
+          required></textarea>
         <p v-if="errors.report.hasError">{{ errors.report.message }}</p>
       </div>
 
       <div class="siimple-form-field">
-        <input @click.prevent="onSubmit" type="submit" value="Tweet" data-disable-with="Tweet" class="siimple-btn siimple-btn--blue post-form-button">
+        <input type="submit" value="Tweet" data-disable-with="Tweet" class="siimple-btn siimple-btn--blue post-form-button">
       </div>
     <% end %>
 
