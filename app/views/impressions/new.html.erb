@@ -10,6 +10,7 @@
       <div class="siimple-form-field">
         <div class="siimple-form-field-label">マンガのタイトル</div>
         <input type="text" v-model="formData.comicTitle" name="impression[comic_title]" class="siimple-input post-form-fluid" />
+        <p v-if="errors.comicTitle.hasError">{{ errors.comicTitle.message }}</p>
       </div>
 
       <div class="siimple-form-field">
@@ -30,11 +31,13 @@
       <div class="siimple-form-field">
         <div class="siimple-form-field-label">心揺さぶられたシーン</div>
         <input type="text" v-model="formData.bestScene" name="impression[best_scene]" class="siimple-input post-form-fluid">
+        <p v-if="errors.bestScene.hasError">{{ errors.bestScene.message }}</p>
       </div>
 
       <div class="siimple-form-field">
         <div class="siimple-form-field-label">感想</div>
         <textarea v-model="formData.report" name="impression[report]" class="siimple-textarea post-form-fluid" rows="10"></textarea>
+        <p v-if="errors.report.hasError">{{ errors.report.message }}</p>
       </div>
 
       <div class="siimple-form-field">

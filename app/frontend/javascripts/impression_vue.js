@@ -46,7 +46,10 @@ new Vue({
           window.location.href = `/impressions/${res.data.id}`;
         })
         .catch(err => {
-          console.log(err.response.data)
+          Object.keys(err.response.data).forEach(key => {
+            this.errors[key].hasError = true;
+            this.errors[key].message = err.response.data[key]
+          });
         });
     },
   },
