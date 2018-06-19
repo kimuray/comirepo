@@ -9,6 +9,7 @@ new Vue({
     CaptureArea,
   },
   data: {
+    isModal: false,
     formData: {
       comicTitle: '',
       emotions: [],
@@ -33,6 +34,7 @@ new Vue({
   },
   methods: {
     onSubmit() {
+      this.isModal = true;
       const element = this.$el.querySelector('#js-capture-area');
       const _this = this;
       html2canvas(element).then(canvas => {
@@ -43,9 +45,11 @@ new Vue({
       this.formData.captureImage = canvas.toDataURL();
       ImpressionApi.create(this.formData)
         .then(res => {
+          this.isModal = false;
           window.location.href = `/impressions/${res.data.id}`;
         })
         .catch(err => {
+          this.isModal = false;
           Object.keys(err.response.data).forEach(key => {
             this.errors[key].hasError = true;
             this.errors[key].message = err.response.data[key]

@@ -5,6 +5,9 @@
 <h2 class="post-form-title">マンガの感想を投稿してみよう！</h2>
 
 <div id="js-impression-new" class="post-form">
+  <div class="post-form-modal" v-if="isModal">
+    <div class="siimple-spinner siimple-spinner--blue"></div>
+  </div>
   <div class="post-form-container">
     <%= form_with model: @impression, url: api_impressions_path, local: true, html: { '@submit.prevent' => 'onSubmit' } do |form| %>
       <div class="siimple-form-field">
@@ -65,10 +68,11 @@
     <% end %>
 
     <div id="js-capture-area" class="capture">
-      <capture-area :comic-title="formData.comicTitle"
-                    :selected-emotions="formData.emotions"
-                    :best-scene="formData.bestScene"
-                    :report="formData.report"></capture-area>
+      <capture-area
+        :comic-title="formData.comicTitle"
+        :selected-emotions="formData.emotions"
+        :best-scene="formData.bestScene"
+        :report="formData.report"></capture-area>
     </div>
   </div>
 </div>
