@@ -1,17 +1,23 @@
 import Vue from 'vue/dist/vue.esm';
 import html2canvas from 'html2canvas';
+import StarRating from 'vue-star-rating'
 import CaptureArea from './components/impressions/CaptureArea.vue';
 import ImpressionApi from './api/impressions';
 
 new Vue({
   el: '#js-impression-new',
   components: {
+    StarRating,
     CaptureArea,
   },
   data: {
+    emotions: {
+      joy: 0,
+      sorrow: 0,
+      expectation: 0,
+    },
     formData: {
       comicTitle: '',
-      emotions: [],
       bestScene: '',
       report: '',
       captureImage: '',

@@ -12,7 +12,7 @@
         <input type="text" v-model="formData.comicTitle" name="impression[comic_title]" class="siimple-input post-form-fluid" />
       </div>
 
-      <div class="siimple-form-field">
+      <!-- <div class="siimple-form-field">
         <div class="siimple-form-field-label">読んだ後の気持ち</div>
         <div class="post-form-emotions">
           <% Emotion.order(:id).each do |emotion| %>
@@ -24,6 +24,32 @@
               <label class="siimple-label"><%= emotion.name %></label>
             </div>
           <% end %>
+        </div>
+      </div> -->
+
+      <div class="siimple-form-field">
+        <div class="siimple-form-field-label">読んだ後の気持ち</div>
+        <div class="post-form-emotions">
+          <p>楽しみ</p>
+          <star-rating
+            :increment="0.5"
+            :star-size="35"
+            v-model="emotions.joy"
+          ></star-rating>
+
+          <p>悲しみ</p>
+          <star-rating
+            :increment="0.5"
+            :star-size="35"
+            v-model="emotions.sorrow"
+          ></star-rating>
+
+          <p>期待</p>
+          <star-rating
+            :increment="0.5"
+            :star-size="35"
+            v-model="emotions.expectation"
+          ></star-rating>
         </div>
       </div>
 
@@ -44,7 +70,7 @@
 
     <div id="js-capture-area" class="capture">
       <capture-area :comic-title="formData.comicTitle"
-                    :selected-emotions="formData.emotions"
+                    :emotions="emotions"
                     :best-scene="formData.bestScene"
                     :report="formData.report"></capture-area>
     </div>
