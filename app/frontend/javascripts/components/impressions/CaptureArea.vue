@@ -11,26 +11,29 @@
         <!-- <div v-for="emotion in emotions" class="capture-emotion-item">
           <label class="capture-tag" :data-emotion-id="emotion.id">{{ emotion.name }}</label>
         </div> -->
-        <p>楽しみ</p>
-        <star-rating
-          :increment="0.5"
-          :star-size="35"
-          :rating="emotions.joy"
-        ></star-rating>
+        <div class="capture-emotion-item">
+          <p class="capture-emotion-item-label">楽しみ</p>
+          <star-rating
+            :increment="0.5"
+            :star-size="35"
+            :rating="emotions.joy" />
+        </div>
 
-        <p>悲しみ</p>
-        <star-rating
-          :increment="0.5"
-          :star-size="35"
-          :rating="emotions.sorrow"
-        ></star-rating>
+        <div class="capture-emotion-item">
+          <p class="capture-emotion-item-label">悲しみ</p>
+          <star-rating
+            :increment="0.5"
+            :star-size="35"
+            :rating="emotions.sorrow" />
+        </div>
 
-        <p>期待</p>
-        <star-rating
-          :increment="0.5"
-          :star-size="35"
-          :rating="emotions.expectation"
-        ></star-rating>
+        <div class="capture-emotion-item">
+          <p class="capture-emotion-item-label">期待</p>
+          <star-rating
+            :increment="0.5"
+            :star-size="35"
+            :rating="emotions.expectation" />
+        </div>
       </div>
 
       <div class="capture-field">
