@@ -8,8 +8,31 @@
       </div>
 
       <div class="capture-field_emotion">
-        <div v-for="emotion in emotions" class="capture-emotion-item">
+        <!-- <div v-for="emotion in emotions" class="capture-emotion-item">
           <label class="capture-tag" :data-emotion-id="emotion.id">{{ emotion.name }}</label>
+        </div> -->
+        <div class="capture-emotion-item">
+          <p class="capture-emotion-item-label">楽しみ</p>
+          <star-rating
+            :increment="0.5"
+            :star-size="35"
+            :rating="emotions.joy" />
+        </div>
+
+        <div class="capture-emotion-item">
+          <p class="capture-emotion-item-label">悲しみ</p>
+          <star-rating
+            :increment="0.5"
+            :star-size="35"
+            :rating="emotions.sorrow" />
+        </div>
+
+        <div class="capture-emotion-item">
+          <p class="capture-emotion-item-label">期待</p>
+          <star-rating
+            :increment="0.5"
+            :star-size="35"
+            :rating="emotions.expectation" />
         </div>
       </div>
 
@@ -27,30 +50,19 @@
 </template>
 
 <script>
+import StarRating from 'vue-star-rating'
 import { axios } from '../../utils/http-client';
 
 export default {
   name: 'CaptureArea',
+  components: {
+    StarRating,
+  },
   props: {
     comicTitle: String,
-    selectedEmotions: Array,
+    emotions: Object,
     bestScene: String,
     report: String,
-  },
-  data() {
-    return {
-      emotions: [],
-    };
-  },
-  watch: {
-    selectedEmotions(emotions) {
-      this.addCheckStyle(emotions);
-    },
-  },
-  created() {
-    axios.get(`/emotions`).then(res => {
-      this.emotions = res.data;
-    });
   },
   methods: {
     addCheckStyle(emotions) {

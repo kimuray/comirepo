@@ -31,19 +31,18 @@
     }
 
     &-field_emotion {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-start;
-      align-items: center;
       width: 100%;
       margin-top: 20px;
     }
 
     &-emotion-item {
-      width: 20%;
-      margin-bottom: 10px;
       display: flex;
       align-items: center;
+      justify-content: flex-start;
+    }
+
+    &-emotion-item-label {
+      width: 80px;
     }
 
     &-emotion-icon {

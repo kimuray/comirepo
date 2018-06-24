@@ -21,7 +21,7 @@
         <p v-if="errors.comicTitle.hasError">{{ errors.comicTitle.message }}</p>
       </div>
 
-      <div class="siimple-form-field">
+      <!-- <div class="siimple-form-field">
         <div class="siimple-form-field-label">読んだ後の気持ち</div>
         <div class="post-form-emotions">
           <% Emotion.order(:id).each do |emotion| %>
@@ -37,6 +37,35 @@
               <label class="siimple-label"><%= emotion.name %></label>
             </div>
           <% end %>
+        </div>
+      </div> -->
+
+      <div class="siimple-form-field">
+        <div class="siimple-form-field-label">読んだ後の気持ち</div>
+        <div class="post-form-emotions">
+          <div class="post-form-emotions-field">
+            <p class="post-form-emotions-label">楽しみ</p>
+            <star-rating
+              :increment="0.5"
+              :star-size="35"
+              v-model="emotions.joy" />
+          </div>
+
+          <div class="post-form-emotions-field">
+            <p class="post-form-emotions-label">悲しみ</p>
+            <star-rating
+              :increment="0.5"
+              :star-size="35"
+              v-model="emotions.sorrow" />
+          </div>
+
+          <div class="post-form-emotions-field">
+            <p class="post-form-emotions-label">期待</p>
+            <star-rating
+              :increment="0.5"
+              :star-size="35"
+              v-model="emotions.expectation" />
+          </div>
         </div>
       </div>
 
@@ -68,11 +97,10 @@
     <% end %>
 
     <div id="js-capture-area" class="capture">
-      <capture-area
-        :comic-title="formData.comicTitle"
-        :selected-emotions="formData.emotions"
-        :best-scene="formData.bestScene"
-        :report="formData.report"></capture-area>
+      <capture-area :comic-title="formData.comicTitle"
+                    :emotions="emotions"
+                    :best-scene="formData.bestScene"
+                    :report="formData.report"></capture-area>
     </div>
   </div>
 </div>
