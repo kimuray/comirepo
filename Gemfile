@@ -57,6 +57,7 @@ group :development do
   gem 'capistrano-rbenv'
   gem 'capistrano-bundler'
   gem 'rack-mini-profiler', require: false
+  gem 'anemone'
 end
 
 group :test do
