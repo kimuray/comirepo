@@ -24,11 +24,15 @@ class ComicCrowler
       end
 
       anemone.on_every_page do |page|
-        next if page.doc.title == "漫画  [ぬ]"
-        title = comic_title(page)
-        title_yomi, title_en = comic_title_yomigana(page)
+        begin
+          next if page.doc.title =~ /\A漫画  \[.\]\z/
+          title = comic_title(page)
+          title_yomi, title_en = comic_title_yomigana(page)
 
-        csv.puts [title, title_yomi, title_en]
+          csv.puts [title, title_yomi, title_en]
+        rescue => e
+          p e
+        end
       end
     end
     csv.close
@@ -47,11 +51,25 @@ class ComicCrowler
   class << self
     def execute(chars)
       chars.each do |char|
-        comic_crowler = self.new(moji)
+        comic_crowler = self.new(char)
         comic_crowler.execute
       end
     end
   end
 end
 
-ComicCrowler.execute(ARGV)
+char_set = [
+  ['ka', 'ki', 'ku', 'ke', 'ko'],
+  ['sa', 'si', 'su', 'se', 'so'],
+  ['ta', 'ti', 'tu', 'te', 'to'],
+  ['na', 'ni', 'nu', 'ne', 'no'],
+  ['ha', 'hi', 'hu', 'he', 'ho'],
+  ['ma', 'mi', 'mu', 'me', 'mo'],
+  ['ra', 'ri', 'ru', 're', 'ro'],
+  ['ya', 'yu', 'yo', 'wa'],
+]
+
+char_set.each do |chars|
+  ComicCrowler.execute(chars)
+  sleep 600
+end
