@@ -15,6 +15,7 @@ gem 'dotenv-rails'
 gem 'twitter'
 gem 'meta-tags'
 gem 'friendly_id', '~> 5.1.0'
+gem 'bulk_insert'
 
 # Uploader
 gem 'fog'
