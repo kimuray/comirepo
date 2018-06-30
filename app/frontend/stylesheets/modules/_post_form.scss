@@ -44,7 +44,31 @@
       right: 0;
       z-index: 1000;
       overflow-y: auto;
-     background-color:rgba(255,255,255,0.8);
+      background-color:rgba(255,255,255,0.8);
+    }
+
+    &-comic-title-form {
+      position: relative;
+
+      &-suggest {
+        position: absolute;
+        top: 60px;
+        border: 1px solid #dde5ee;
+        background-color: #fff;
+      }
+    }
+
+    &-suggest-item {
+      border: 1px solid #dde5ee;
+      padding: 10px 5px;
+      margin: 0;
+      width: 250px;
+      font-size: 0.9em;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #e7f9fe;
+      }
     }
   }
 }

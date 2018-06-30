@@ -1,5 +1,5 @@
 <template>
-  <div class="siimple-form-field">
+  <div class="siimple-form-field post-form-comic-title-form">
     <div class="siimple-form-field-label">マンガのタイトル</div>
     <input
       type="text"
@@ -8,8 +8,8 @@
       class="siimple-input post-form-fluid"
       @input="filterComicTitle"
       required />
-    <div class="impression-suggest-list" v-show="isDisplaySuggest">
-      <p v-for="title in suggestTitleList">
+    <div class="post-form-comic-title-form-suggest" v-show="isDisplaySuggest">
+      <p v-for="title in suggestTitleList" class="post-form-suggest-item">
         {{ title }}
       </p>
     </div>

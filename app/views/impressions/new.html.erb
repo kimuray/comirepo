@@ -11,7 +11,6 @@
   <div class="post-form-container">
     <%= form_with model: @impression, url: api_impressions_path, local: true, html: { '@submit.prevent' => 'onSubmit' } do |form| %>
       <suggest-title-text-form
-        :comic-title="formData.comicTitle"
         :errors="errors.comicTitle">
       </suggest-title-text-form>
       
