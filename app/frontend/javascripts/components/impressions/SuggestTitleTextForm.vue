@@ -6,11 +6,11 @@
       v-model="comicTitle"
       name="impression[comic_title]"
       class="siimple-input post-form-fluid"
-      @input="filterComicTitle"
+      @keyup="filterComicTitle"
       @keyup.enter="enterComicTitle"
       @blur="deleteSuggestList"
       required />
-    <div class="post-form-comic-title-form-suggest" v-if="isDisplaySuggest">
+    <div class="post-form-comic-title-form-suggest" v-if="displaySuggest">
       <p
         v-for="title in suggestTitleList"
         @click="selectSuggestTitle"
@@ -23,6 +23,7 @@
 </template>
 
 <script>
+import { debounce } from 'lodash';
 import ComicsApi from '../../api/comics';
 
 export default {
@@ -33,21 +34,33 @@ export default {
     return {
       comicTitle: '',
       suggestTitleList: [],
-      isDisplaySuggest: false,
+      isDisplaySuggest: true,
     };
   },
-  methods: {
-    filterComicTitle(e) {
+  computed: {
+    displaySuggest: function() {
+      // FIXME: サジェストの表示制御が複雑。。。
+      if (!this.isDisplaySuggest) {
+        return false;
+      }
+      return this.suggestTitleList.length > 0;
+    }
+  },
+  created() {
+    this.filterComicTitle = debounce((e) => {
       if (e.target.value === '') {
         this.suggestTitleList = [];
-        this.deleteSuggestList();
         return;
       }
       ComicsApi.filterTitle(e.target.value).then(res => {
         this.suggestTitleList = res.data;
-        this.isDisplaySuggest = this.suggestTitleList.length > 0
+        if (this.suggestTitleList.length > 0) {
+          this.isDisplaySuggest = true;
+        }
       });
-    },
+    }, 500);
+  },
+  methods: {
     enterComicTitle(e) {
       e.preventDefault();
       if (!!this.suggestTitleList[0]) {
