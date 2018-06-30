@@ -12,12 +12,11 @@
     <%= form_with model: @impression, url: api_impressions_path, local: true, html: { '@submit.prevent' => 'onSubmit' } do |form| %>
       <div class="siimple-form-field">
         <div class="siimple-form-field-label">マンガのタイトル</div>
-        <input
-          type="text"
+        <vue-simple-suggest
           v-model="formData.comicTitle"
-          name="impression[comic_title]"
-          class="siimple-input post-form-fluid"
-          required>
+          :list="comicList"
+          @input="inputComicTitle">
+        </vue-simple-suggest>
         <p v-if="errors.comicTitle.hasError">{{ errors.comicTitle.message }}</p>
       </div>
 

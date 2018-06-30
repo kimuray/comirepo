@@ -12,5 +12,6 @@ Rails.application.routes.draw do
   namespace :api, { format: 'json' } do
     resources :impressions, only: :create
     resources :emotions, only: :index
+    resources :comics, only: :index
   end
 end
