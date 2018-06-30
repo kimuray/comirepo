@@ -2,6 +2,7 @@ import Vue from 'vue/dist/vue.esm';
 import html2canvas from 'html2canvas';
 import StarRating from 'vue-star-rating'
 import CaptureArea from './components/impressions/CaptureArea.vue';
+import SuggestTitleTextForm from './components/impressions/SuggestTitleTextForm';
 import ImpressionApi from './api/impressions';
 
 new Vue({
@@ -9,6 +10,7 @@ new Vue({
   components: {
     StarRating,
     CaptureArea,
+    SuggestTitleTextForm,
   },
   data: {
     isModal: false,

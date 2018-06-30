@@ -10,15 +10,21 @@
   </div>
   <div class="post-form-container">
     <%= form_with model: @impression, url: api_impressions_path, local: true, html: { '@submit.prevent' => 'onSubmit' } do |form| %>
-      <div class="siimple-form-field">
+      <suggest-title-text-form
+        :comic-title="formData.comicTitle"
+        :errors="errors.comicTitle">
+      </suggest-title-text-form>
+      
+      <!-- <div class="siimple-form-field">
         <div class="siimple-form-field-label">マンガのタイトル</div>
-        <vue-simple-suggest
+        <input
+          type="text"
           v-model="formData.comicTitle"
-          :list="comicList"
-          @input="inputComicTitle">
-        </vue-simple-suggest>
+          name="impression[comic_title]"
+          class="siimple-input post-form-fluid"
+          required>
         <p v-if="errors.comicTitle.hasError">{{ errors.comicTitle.message }}</p>
-      </div>
+      </div> -->
 
       <!-- <div class="siimple-form-field">
         <div class="siimple-form-field-label">読んだ後の気持ち</div>
