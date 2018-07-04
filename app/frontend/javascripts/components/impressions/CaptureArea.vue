@@ -12,33 +12,12 @@
           <label class="capture-tag" :data-emotion-id="emotion.id">{{ emotion.name }}</label>
         </div> -->
         <div class="capture-emotion-item">
-          <p class="capture-emotion-item-label">楽しみ</p>
+          <p class="capture-emotion-item-label">総評</p>
           <star-rating
             :increment="0.5"
             :star-size="35"
-            :rating="emotions.joy" />
+            :rating="evaluationPoint" />
         </div>
-
-        <div class="capture-emotion-item">
-          <p class="capture-emotion-item-label">悲しみ</p>
-          <star-rating
-            :increment="0.5"
-            :star-size="35"
-            :rating="emotions.sorrow" />
-        </div>
-
-        <div class="capture-emotion-item">
-          <p class="capture-emotion-item-label">期待</p>
-          <star-rating
-            :increment="0.5"
-            :star-size="35"
-            :rating="emotions.expectation" />
-        </div>
-      </div>
-
-      <div class="capture-field">
-        <h3 class="capture-sub-title">ベストシーン</h3>
-        <p class="capture-message capture-input">{{ bestScene }}</p>
       </div>
 
       <div class="capture-field">
@@ -60,8 +39,8 @@ export default {
   },
   props: {
     comicTitle: String,
-    emotions: Object,
-    bestScene: String,
+    //emotions: Object,
+    evaluationPoint: Number,
     report: String,
   },
   methods: {

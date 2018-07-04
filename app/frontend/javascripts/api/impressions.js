@@ -6,7 +6,7 @@ export default {
       impression: {
         comic_title: params.comicTitle,
         emotion_ids: params.emotions,
-        best_scene: params.bestScene,
+        evaluation_point: params.evaluationPoint,
         capture: params.captureImage,
         report: params.report,
       },

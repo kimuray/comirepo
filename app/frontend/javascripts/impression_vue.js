@@ -21,16 +21,12 @@ new Vue({
     },
     formData: {
       comicTitle: '',
-      bestScene: '',
+      evaluationPoint: 0.0,
       report: '',
       captureImage: '',
     },
     errors: {
       comicTitle: {
-        hasError: false,
-        message: ''
-      },
-      bestScene: {
         hasError: false,
         message: ''
       },
@@ -63,6 +59,9 @@ new Vue({
             this.errors[key].message = err.response.data[key]
           });
         });
+    },
+    changeTitle(title) {
+      this.formData.comicTitle = title;
     },
   },
 });

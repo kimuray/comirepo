@@ -46,6 +46,11 @@ export default {
       return this.suggestTitleList.length > 0;
     }
   },
+  watch: {
+    comicTitle(val) {
+      this.$emit('change-title', val);
+    }
+  },
   created() {
     this.filterComicTitle = debounce((e) => {
       if (e.target.value === '') {
