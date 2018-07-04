@@ -24,6 +24,7 @@ new Vue({
       evaluationPoint: 0.0,
       report: '',
       captureImage: '',
+      emotions: [],
     },
     errors: {
       comicTitle: {

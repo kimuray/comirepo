@@ -8,9 +8,9 @@
       </div>
 
       <div class="capture-field_emotion">
-        <!-- <div v-for="emotion in emotions" class="capture-emotion-item">
+        <div v-for="emotion in emotionList" class="capture-emotion-item">
           <label class="capture-tag" :data-emotion-id="emotion.id">{{ emotion.name }}</label>
-        </div> -->
+        </div>
         <div class="capture-emotion-item">
           <p class="capture-emotion-item-label">総評</p>
           <star-rating
@@ -31,6 +31,7 @@
 <script>
 import StarRating from 'vue-star-rating'
 import { axios } from '../../utils/http-client';
+import EmotionApi from '../../api/emotions';
 
 export default {
   name: 'CaptureArea',
@@ -39,9 +40,24 @@ export default {
   },
   props: {
     comicTitle: String,
-    //emotions: Object,
+    emotions: Array,
     evaluationPoint: Number,
     report: String,
+  },
+  data() {
+    return {
+      emotionList: [],
+    };
+  },
+  watch: {
+    emotions(val) {
+      this.addCheckStyle(val);
+    },
+  },
+  created() {
+    EmotionApi.getList().then(res => {
+      this.emotionList = res.data;
+    });
   },
   methods: {
     addCheckStyle(emotions) {

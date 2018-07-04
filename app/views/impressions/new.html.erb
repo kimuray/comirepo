@@ -26,7 +26,7 @@
         <p v-if="errors.comicTitle.hasError">{{ errors.comicTitle.message }}</p>
       </div> -->
 
-      <!-- <div class="siimple-form-field">
+      <div class="siimple-form-field">
         <div class="siimple-form-field-label">読んだ後の気持ち</div>
         <div class="post-form-emotions">
           <% Emotion.order(:id).each do |emotion| %>
@@ -43,7 +43,7 @@
             </div>
           <% end %>
         </div>
-      </div> -->
+      </div>
 
       <div class="siimple-form-field">
         <div class="post-form-emotions">
@@ -76,7 +76,8 @@
     <div id="js-capture-area" class="capture">
       <capture-area :comic-title="formData.comicTitle"
                     :evaluation-point="formData.evaluationPoint"
-                    :report="formData.report"></capture-area>
+                    :report="formData.report"
+                    :emotions="formData.emotions"></capture-area>
     </div>
   </div>
 </div>
