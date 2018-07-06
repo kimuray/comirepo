@@ -1,4 +1,10 @@
+@font-face {
+  font-family: 'RiiPopkkR';
+  src: url('./fonts/RiiPopkkR.otf') format('opentype');
+}
+
 html,body {
+  font-family: 'RiiPopkkR';
   height: 100;
 }
 
