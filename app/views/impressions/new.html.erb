@@ -3,7 +3,7 @@
 <% end %>
 
 <h2 class="post-form-title">マンガの感想を投稿してみよう！</h2>
-
+<br>
 <div id="js-impression-new" class="post-form">
   <div class="post-form-modal" v-if="isModal">
     <div class="siimple-spinner siimple-spinner--blue"></div>
@@ -14,17 +14,7 @@
         :errors="errors.comicTitle"
         @change-title="changeTitle">
       </suggest-title-text-form>
-
-      <!-- <div class="siimple-form-field">
-        <div class="siimple-form-field-label">マンガのタイトル</div>
-        <input
-          type="text"
-          v-model="formData.comicTitle"
-          name="impression[comic_title]"
-          class="siimple-input post-form-fluid"
-          required>
-        <p v-if="errors.comicTitle.hasError">{{ errors.comicTitle.message }}</p>
-      </div> -->
+      <br>
       <div class="siimple-form-field">
         <div class="siimple-form-field-label">総評</div>
         <div class="post-form-emotions">
@@ -36,7 +26,7 @@
           </div>
         </div>
       </div>
-
+      <br>
       <div class="siimple-form-field">
         <div class="siimple-form-field-label">読んだ後の気持ち</div>
         <div class="post-form-emotions">
@@ -55,7 +45,7 @@
           <% end %>
         </div>
       </div>
-
+      <br>
       <div class="siimple-form-field">
         <div class="siimple-form-field-label">感想</div>
         <textarea

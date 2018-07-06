@@ -3,8 +3,11 @@
   src: url('./fonts/RiiPopkkR.otf') format('opentype');
 }
 
-html,body {
+* {
   font-family: 'RiiPopkkR';
+}
+
+html,body {
   height: 100;
 }
 
