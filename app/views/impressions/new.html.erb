@@ -25,6 +25,17 @@
           required>
         <p v-if="errors.comicTitle.hasError">{{ errors.comicTitle.message }}</p>
       </div> -->
+      <div class="siimple-form-field">
+        <div class="siimple-form-field-label">総評</div>
+        <div class="post-form-emotions">
+          <div class="post-form-emotions-field">
+            <star-rating
+              :increment="0.5"
+              :star-size="35"
+              v-model="formData.evaluationPoint" />
+          </div>
+        </div>
+      </div>
 
       <div class="siimple-form-field">
         <div class="siimple-form-field-label">読んだ後の気持ち</div>
@@ -42,18 +53,6 @@
               <label class="siimple-label"><%= emotion.name %></label>
             </div>
           <% end %>
-        </div>
-      </div>
-
-      <div class="siimple-form-field">
-        <div class="post-form-emotions">
-          <div class="post-form-emotions-field">
-            <p class="siimple-form-field-label post-form-emotions-label">総評</p>
-            <star-rating
-              :increment="0.5"
-              :star-size="35"
-              v-model="formData.evaluationPoint" />
-          </div>
         </div>
       </div>
 
