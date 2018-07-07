@@ -13,3 +13,17 @@ if (!!document.querySelector('#js-header')) {
     el: '#js-header',
   });
 }
+
+if (!!document.querySelector('#js-alert')) {
+  new Vue({
+    el: '#js-alert',
+    data: {
+      isShow: true
+    },
+    mounted() {
+      setTimeout(() => {
+        this.isShow = false;
+      }, 3000);
+    },
+  });
+}

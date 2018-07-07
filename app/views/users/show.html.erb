@@ -25,5 +25,8 @@
         </li>
       <% end %>
     </ul>
+    <% unless @user.impressions.any? %>
+      <%= link_to 'まだ感想が投稿されていないよ！投稿してみよう！', new_impression_path %>
+    <% end %>
   </div>
 </div>

@@ -2,6 +2,7 @@
   <div class="siimple-form-field post-form-comic-title-form">
     <div class="siimple-form-field-label">マンガのタイトル</div>
     <input
+      id="js-suggest-input"
       type="text"
       v-model="comicTitle"
       name="impression[comic_title]"
@@ -13,7 +14,7 @@
     <div class="post-form-comic-title-form-suggest" v-if="displaySuggest">
       <p
         v-for="title in suggestTitleList"
-        @click="selectSuggestTitle"
+        @click="selectSuggestTitle(title)"
         class="post-form-suggest-item">
         {{ title }}
       </p>
@@ -73,9 +74,12 @@ export default {
       }
       this.deleteSuggestList();
     },
-    selectSuggestTitle(e) {
-      this.comicTitle = e.target.innerText;
-      this.deleteSuggestList();
+    selectSuggestTitle(title) {
+      document.getElementById('js-suggest-input').blur();
+      setTimeout(() => {
+        this.comicTitle = title;
+        this.deleteSuggestList();
+      }, 50);
     },
     deleteSuggestList() {
       // FIXME: blurの動作の為に一瞬の待ち時間が必要

@@ -35,6 +35,12 @@
       </header>
     <% end %>
 
+    <% if notice %>
+      <div id="js-alert" class="siimple-alert siimple-alert--error" v-show="isShow">
+        <%= notice %>
+      </div>
+    <% end %>
+
     <%= yield %>
 
     <%= javascript_pack_tag 'application' %>
