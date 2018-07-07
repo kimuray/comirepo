@@ -27,6 +27,9 @@
     }
 
     &-impressions-list-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       width: calc(100% - 20px);
       padding: 10px;
       background: #fff;
@@ -43,8 +46,10 @@
     }
 
     &-impressions-title {
-      font-size: 1.1em;
+      color: #546778;
+      font-size: 1.2em;
       font-weight: bold;
+      text-decoration: none;
       margin: 0;
     }
 

@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # FIXME: elementUIに埋め込んだリンクがmethodきかない
   get '/logout' => 'sessions#destroy'
 
-  resources :impressions, only: %w(new show)
+  resources :impressions, only: %w(new show destroy)
   resources :users, only: :show
 
   namespace :api, { format: 'json' } do

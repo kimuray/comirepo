@@ -9,16 +9,20 @@
     <p>投稿した感想一覧</p>
     <ul class="users-impressions-list">
       <% @user.impressions.each do |impression| %>
-        <%= link_to impression_path(impression), class: 'users-impressions-list-item' do %>
-          <li>
-            <p class="users-impressions-on"><%= l(impression.created_at, format: :date) %></p>
-            <p class="users-impressions-title"><%= impression.comic_title %>の感想</p>
+        <li class="users-impressions-list-item">
+          <div>
+            <p class="users-impressions-on"><%= l(impression.created_at, format: :long) %></p>
+            <%= link_to "#{impression.comic_title}の感想", impression_path(impression), class: 'users-impressions-title' %>
             <p class="users-impressions-content"><%= impression.report %></p>
             <% impression.emotions.each do |emotion| %>
               <span class="siimple-tag siimple-tag--blue"><%= emotion.name %></span>
             <% end %>
-          </li>
-        <% end %>
+          </div>
+          <%= link_to '削除', impression_path(impression),
+                      method: :delete,
+                      class: 'siimple-btn siimple-btn--red',
+                      data: { confirm: '削除してもよろしいですか？' } %>
+        </li>
       <% end %>
     </ul>
   </div>
