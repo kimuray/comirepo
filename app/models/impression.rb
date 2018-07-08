@@ -4,6 +4,8 @@ class Impression < ApplicationRecord
   has_many :selecting_emotions, dependent: :destroy
   has_many :emotions, through: :selecting_emotions
 
+  counter_culture :comic
+
   mount_base64_uploader :capture, CaptureUploader
 
   validates :comic_title, presence: true
