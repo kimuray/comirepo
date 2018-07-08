@@ -8,8 +8,7 @@ class Comic < ApplicationRecord
     where('title_kana LIKE :word', word: "#{word}%")
   }
   scope :search_title, ->(word) {
-    Comic
-      .like_title(word)
-      .or(Comic.like_title_kana(word))
+    Comic.like_title(word)
+         .or(Comic.like_title_kana(word))
   }
 end
