@@ -1,84 +1,73 @@
 .capture {
   width: 600px;
-  background: linear-gradient(#d5eaff, #f4faff);
   position: absolute;
   left: -1000px;
 
   @at-root {
     &-container {
       display: flex;
-      flex-direction: column;
       justify-content: center;
-      align-items: center;
+      flex-wrap: wrap;
+      border: 15px solid #3994DF;
       padding: 20px;
     }
 
-    &-contents {
+    &-header {
       display: flex;
-      flex-direction: column;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      width: 80%;
-    }
-
-    &-field {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      margin-top: 15px;
-    }
-
-    &-field_emotion {
-      width: 100%;
-      margin-top: 20px;
-    }
-
-    &-emotion-item {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-    }
-
-    &-emotion-item-label {
-      width: 80px;
-    }
-
-    &-emotion-icon {
-      width: 20px;
     }
 
     &-comic-title {
-      width: 100%;
-      text-align: center;
-      margin-bottom: 5px;
-      word-wrap: break-word;
+      font-size: 1.1em;
+      line-height: 1.5em;
+      width: 380px;
+      margin: 10px 0;
     }
 
-    &-sub-title {
-      font-size: 1em;
-      font-weight: 400;
-      margin: 0;
+    &-emotions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      margin: 10px 0;
     }
 
-    &-message {
+    &-field {
+      position: relative;
+      margin: 1.5em 0;
+      padding: 0.5em 1em;
+      border: solid 3px #95ccff;
+      border-radius: 8px;
+      width: 530px;
+
+      &-title {
+        position: absolute;
+        display: inline-block;
+        top: -13px;
+        left: 10px;
+        padding: 0 9px;
+        line-height: 1;
+        font-size: 19px;
+        background: #FFF;
+        color: #95ccff;
+        font-weight: bold;
+      }
+    }
+
+    &-report {
       width: 100%;
-      margin: 10px 0 0 0;
-      text-align: center;
+      margin: 10px 0;
+      text-align: left;
+      line-height: 2em;
+      letter-spacing: 1px;
       word-wrap: break-word;
       white-space: pre-wrap;
-    }
-
-    &-input {
-      border: 1px dashed #999;
-      padding: 10px 20px;
-      border-radius: 8px;
-      background-color: #fff;
+      min-height: 5em;
     }
 
     &-tag {
       font-size: 1em;
+      margin-right: 5px;
     }
   }
 }

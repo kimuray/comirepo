@@ -1,30 +1,36 @@
 <template>
   <div class="capture-container">
-    <img src="../../../images/logo.png" height="30" width="128" />
-    <div class="capture-contents">
-      <div class="capture-field">
-        <h3 class="capture-comic-title capture-input">{{ comicTitle }}</h3>
-        <p class="capture-message">を読みました！</p>
-      </div>
-
-      <div class="capture-field_emotion">
-        <div v-for="emotion in emotionList" class="capture-emotion-item">
-          <label class="capture-tag" :data-emotion-id="emotion.id">{{ emotion.name }}</label>
-        </div>
-        <div class="capture-emotion-item">
-          <p class="capture-emotion-item-label">総評</p>
-          <star-rating
-            :increment="0.5"
-            :star-size="35"
-            :rating="evaluationPoint" />
-        </div>
-      </div>
-
-      <div class="capture-field">
-        <h3 class="capture-sub-title">感想</h3>
-        <p class="capture-message capture-input">{{ report }}</p>
+    <div class="capture-field">
+      <span class="capture-field-title">読んだマンガ</span>
+      <div class="capture-header">
+        <p class="capture-comic-title">{{ comicTitle }}</p>
+        <star-rating
+          :increment="0.5"
+          :star-size="25"
+          :rating="evaluationPoint"
+          :read-only="true"
+          :show-rating="false" />
       </div>
     </div>
+
+    <div class="capture-field">
+      <span class="capture-field-title">読んだあとの気持ち</span>
+      <div class="capture-emotions">
+        <label v-for="emotion in emotionList"
+               class="capture-tag siimple-tag siimple-tag--teal hide"
+               :data-emotion-id="emotion.id">{{ emotion.name }}</label>
+        <label v-if="nothingEmotions" class="capture-tag siimple-tag siimple-tag--teal">
+          特になし
+        </label>
+      </div>
+    </div>
+
+    <div class="capture-field">
+      <span class="capture-field-title">感想</span>
+      <p class="capture-report">{{ report }}</p>
+    </div>
+
+    <img src="../../../images/logo.png" height="40" width="225" />
   </div>
 </template>
 
@@ -54,6 +60,11 @@ export default {
       this.addCheckStyle(val);
     },
   },
+  computed: {
+    nothingEmotions: function() {
+      return this.emotions.length === 0;
+    }
+  },
   created() {
     EmotionApi.getList().then(res => {
       this.emotionList = res.data;
@@ -63,11 +74,9 @@ export default {
     addCheckStyle(emotions) {
       this.$el.querySelectorAll('[data-emotion-id]').forEach(element => {
         if (emotions.includes(element.dataset.emotionId)) {
-          element.classList.add('siimple-tag');
-          element.classList.add('siimple-tag--teal');
+          element.classList.remove('hide');
         } else {
-          element.classList.remove('siimple-tag');
-          element.classList.remove('siimple-tag--teal');
+          element.classList.add('hide');
         }
       });
     },

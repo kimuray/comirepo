@@ -40,11 +40,13 @@ new Vue({
   methods: {
     onSubmit() {
       this.isModal = true;
-      const element = this.$el.querySelector('#js-capture-area');
-      const _this = this;
-      html2canvas(element).then(canvas => {
-        _this.postImpressionToApi(canvas);
-      });
+      setTimeout(() => {
+        const element = this.$el.querySelector('#js-capture-area');
+        const _this = this;
+        html2canvas(element).then(canvas => {
+          _this.postImpressionToApi(canvas);
+        });
+      }, 1000)
     },
     postImpressionToApi(canvas) {
       this.formData.captureImage = canvas.toDataURL();
