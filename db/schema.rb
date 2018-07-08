@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_04_141841) do
+ActiveRecord::Schema.define(version: 2018_07_08_040505) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,6 +75,8 @@ ActiveRecord::Schema.define(version: 2018_07_04_141841) do
     t.string "capture"
     t.float "evaluation_point", default: 0.0, null: false
     t.integer "comic_volume"
+    t.bigint "comic_id"
+    t.index ["comic_id"], name: "index_impressions_on_comic_id"
     t.index ["user_id"], name: "index_impressions_on_user_id"
   end
 
@@ -99,6 +101,7 @@ ActiveRecord::Schema.define(version: 2018_07_04_141841) do
     t.string "slug"
   end
 
+  add_foreign_key "impressions", "comics"
   add_foreign_key "selecting_emotions", "emotions"
   add_foreign_key "selecting_emotions", "impressions"
 end

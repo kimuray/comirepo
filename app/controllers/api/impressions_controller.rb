@@ -3,7 +3,7 @@ class Api::ImpressionsController < ApplicationController
 
   def create
     @impression = current_user.impressions.build(impression_params)
-    if @impression.save
+    if @impression.set_comic_and_save
       # @twitter_api.tweet(post_message)
       render json: @impression
     else
@@ -14,7 +14,7 @@ class Api::ImpressionsController < ApplicationController
   private
 
   def impression_params
-    params.fetch(:impression, {}).permit(:comic_title, :best_scene, :report, :capture, emotion_ids: [])
+    params.fetch(:impression, {}).permit(:comic_title, :evaluation_point, :report, :capture, emotion_ids: [])
   end
 
   def set_twitter_api
@@ -25,7 +25,7 @@ class Api::ImpressionsController < ApplicationController
     <<~TWEET
       #{@impression.comic_title}を読みました
 
-      #こみれぽ #{impression_url(@impression)}
+      #まんがのおばけ #{impression_url(@impression)}
     TWEET
   end
 

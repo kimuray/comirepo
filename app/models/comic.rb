@@ -1,4 +1,6 @@
 class Comic < ApplicationRecord
+  has_many :impressions
+
   scope :like_title, ->(word) {
     where('title LIKE :word', word: "#{word}%")
   }
