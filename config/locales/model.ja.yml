@@ -1,0 +1,8 @@
+ja:
+  enumerize:
+    inquiry:
+      kind:
+        how_use: 使い方について
+        bug_report: 動作不良、バグについて
+        slander: 誹謗中傷について
+        other: その他

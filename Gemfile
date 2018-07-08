@@ -17,6 +17,7 @@ gem 'meta-tags'
 gem 'friendly_id', '~> 5.1.0'
 gem 'bulk_insert'
 gem 'counter_culture'
+gem 'enumerize'
 
 # Uploader
 gem 'fog'
