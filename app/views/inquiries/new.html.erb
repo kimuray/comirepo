@@ -1,0 +1,52 @@
+<h2 class="post-form-title">お問い合わせ</h2>
+<br>
+<div class="post-form">
+  <div class="post-form-container">
+    <p class="post-form-description">
+      原則5営業日以内に返信させていただきます。お時間をいただく場合、一時返答となる場合がございますのでご了承ください。
+    </p>
+    <%= form_with model: @inquiry, url: inquiries_path, local: true do |form| %>
+      <% if @inquiry.errors.any? %>
+        <div class="siimple-form-field">
+          <div class="siimple-alert siimple-alert--error">
+            <% @inquiry.errors.full_messages.each do |message| %>
+              <p><%= message %></p>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+
+      <div class="siimple-form-field">
+        <%= form.label :kind, class: 'siimple-form-field-label' %>
+        <%= form.select :kind,
+                        Inquiry.kind.options,
+                        { prompt: '問い合わせ内容を選択してください' },
+                        { class: 'siimple-select siimple-select--fluid' } %>
+      </div>
+      <br>
+      <div class="siimple-form-field">
+        <%= form.label :name, class: 'siimple-form-field-label' %>
+        <%= form.text_field :name, class: 'siimple-input post-form-fluid' %>
+      </div>
+      <br>
+      <div class="siimple-form-field">
+        <%= form.label :email, class: 'siimple-form-field-label' %>
+        <%= form.email_field :email, class: 'siimple-input post-form-fluid' %>
+      </div>
+      <br>
+      <div class="siimple-form-field">
+        <%= form.label :content, class: 'siimple-form-field-label' %>
+        <%= form.text_area :content, class: 'siimple-textarea post-form-fluid', rows: 10 %>
+      </div>
+
+      <div class="siimple-form-field">
+        <%= form.submit '送信',
+                        class: 'siimple-btn siimple-btn--blue post-form-button',
+                        data: {
+                          confirm: 'この内容でお問い合わせをします。よろしいですか？',
+                          disable_with: '送信中'
+                        } %>
+      </div>
+    <% end %>
+  </div>
+</div>

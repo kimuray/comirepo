@@ -14,3 +14,9 @@ html,body {
 .siimple-input,.siimple-textarea {
   font-size: 16px;
 }
+
+.field_with_errors>input,
+.field_with_errors>select,
+.field_with_errors>textarea {
+  background-color: #f8beb9;
+}

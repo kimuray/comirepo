@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resources :impressions, only: %w(new show destroy)
   resources :users, only: :show
+  resources :inquiries, only: %w(new create)
 
   namespace :api, { format: 'json' } do
     resources :impressions, only: :create
