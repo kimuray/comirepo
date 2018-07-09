@@ -1,12 +1,16 @@
 <template>
   <div class="siimple-form-field post-form-comic-title-form">
-    <div class="siimple-form-field-label">マンガのタイトル</div>
+    <div class="siimple-form-field-label post-form-label">
+      <img src="../../../images/title_obake.png" class="post-form-character" />
+      <span class="post-form-balloon">まんがのタイトルをおしえて！</span>
+    </div>
     <input
       id="js-suggest-input"
       type="text"
       v-model="comicTitle"
       name="impression[comic_title]"
       class="siimple-input post-form-fluid"
+      placeholder="タイトルを入力してね！"
       @keyup="filterComicTitle"
       @keyup.enter="enterComicTitle"
       @blur="deleteSuggestList"
