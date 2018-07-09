@@ -9,7 +9,8 @@
           :star-size="25"
           :rating="evaluationPoint"
           :read-only="true"
-          :show-rating="false" />
+          :fixed-points="1"
+          :text-class="'capture-rating-text'" />
       </div>
     </div>
 

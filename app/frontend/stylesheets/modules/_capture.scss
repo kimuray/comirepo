@@ -21,7 +21,7 @@
     &-comic-title {
       font-size: 1.1em;
       line-height: 1.5em;
-      width: 380px;
+      width: 330px;
       margin: 10px 0;
     }
 
@@ -68,6 +68,11 @@
     &-tag {
       font-size: 1em;
       margin-right: 5px;
+    }
+
+    &-rating-text {
+      color: #FFCD66;
+      font-weight: bold;
     }
   }
 }
