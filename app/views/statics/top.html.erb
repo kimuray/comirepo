@@ -1,12 +1,18 @@
 <div class="top">
   <div class="top-container">
+    <p class="top-description">
+      さっき読んだ漫画の感想、<br>
+      みんなにシェアしませんか？
+    </p>
+
     <div class="top-logo">
       <%= image_tag asset_pack_path('images/top_logo.png'), class: 'top-logo-image' %>
+      <%= image_tag asset_pack_path('images/top_mascot.png'), class: 'top-logo-mascot' %>
     </div>
 
-    <div class="top-flex-item">
+    <div class="top-login">
       <% unless logged_in? %>
-        <%= link_to 'Twitterでログイン', '/auth/twitter', class: 'siimple-btn siimple-btn--blue' %>
+        <%= link_to 'Twitterでログイン', '/auth/twitter', class: 'siimple-btn siimple-btn--blue top-login-btn' %>
       <% else %>
         <%= link_to 'ログアウト', '/logout', method: :delete, class: 'siimple-btn siimple-btn--red' %>
       <% end %>

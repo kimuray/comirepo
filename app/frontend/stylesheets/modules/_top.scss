@@ -1,10 +1,6 @@
 .top {
   height: 100vh;
-  background-image: url('../images/top_backscreen.png');
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
+  background-color: #b3bceb;
 
   @at-root {
     &-container {
@@ -14,6 +10,40 @@
       align-items: center;
       height: 100vh;
     }
+
+    &-description {
+      color: #fff;
+      font-size: 2em;
+      margin-bottom: 50px;
+      line-height: 1.3em;
+      text-align: center;
+    }
+
+    &-logo {
+      position: relative;
+    }
+
+    &-logo-image {
+      max-width: 480px;
+    }
+
+    &-logo-mascot {
+      position: absolute;
+      left: -80px;
+      top: 120px;
+      height: 240px;
+      width: 180px;
+    }
+
+    &-login {
+      margin: 50px 0 0 0;
+    }
+
+    &-login-btn {
+      font-size: 1.2em;
+      padding: 0.5em 1.5em;
+      font-weight: bold;
+    }
   }
 }
 
@@ -22,5 +52,21 @@
     display: block;
     width: 95%;
     margin: 0 auto;
+  }
+
+  .top-description {
+    font-size: 1.5em;
+  }
+
+  .top-login-btn {
+    font-size: 1em;
+    padding: 0.5em 1em;
+  }
+
+  .top-logo-mascot {
+    left: 0px;
+    top: 120px;
+    height: 120px;
+    width: 90px;
   }
 }
