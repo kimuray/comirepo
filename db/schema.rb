@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_08_045726) do
+ActiveRecord::Schema.define(version: 2018_07_12_143600) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,8 +38,8 @@ ActiveRecord::Schema.define(version: 2018_07_08_045726) do
 
   create_table "comics", force: :cascade do |t|
     t.string "title", null: false
-    t.string "title_kana", null: false
-    t.string "title_en", null: false
+    t.string "title_kana"
+    t.string "title_en"
     t.string "initial_char"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
