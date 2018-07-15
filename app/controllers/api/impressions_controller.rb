@@ -12,7 +12,7 @@ class Api::ImpressionsController < ApplicationController
   private
 
   def impression_params
-    params.fetch(:impression, {}).permit(:comic_title, :evaluation_point, :report, :capture, emotion_ids: [])
+    params.fetch(:impression, {}).permit(:comic_title, :volume_number, :evaluation_point, :report, :capture, emotion_ids: [])
   end
 
   def set_twitter_api

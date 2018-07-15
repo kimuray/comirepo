@@ -4,6 +4,7 @@
       <span class="capture-field-title">読んだマンガ</span>
       <div class="capture-header">
         <p class="capture-comic-title">{{ comicTitle }}</p>
+        <p class="capture-volume-number">{{ displayVolumeNumber }}</p>
         <star-rating
           :increment="0.5"
           :star-size="25"
@@ -50,6 +51,7 @@ export default {
     emotions: Array,
     evaluationPoint: Number,
     report: String,
+    volumeNumber: [Number, String],
   },
   data() {
     return {
@@ -64,6 +66,12 @@ export default {
   computed: {
     nothingEmotions: function() {
       return this.emotions.length === 0;
+    },
+    displayVolumeNumber: function() {
+      if (this.volumeNumber === null || isNaN(this.volumeNumber)) {
+        return '';
+      }
+      return `${this.volumeNumber}巻`;
     }
   },
   created() {

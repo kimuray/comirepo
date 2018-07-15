@@ -20,6 +20,20 @@
         @change-title="changeTitle">
       </suggest-title-text-form>
       <br>
+
+      <div class="siimple-form-field mb-30">
+        <div class="siimple-form-field-label post-form-label">
+          <%= image_tag asset_pack_path('images/title_obake.png'), class: 'post-form-character' %>
+          <span class="post-form-balloon">読んだ単行本を巻数を教えてね！</span>
+        </div>
+        <input
+          type="number"
+          v-model="formData.volumeNumber"
+          name="impression[volume_number]"
+          class="siimple-input post-form-fluid"
+          placeholder="単行本の巻数を入力してね！" />
+      </div>
+
       <div class="siimple-form-field mb-30">
         <div class="siimple-form-field-label post-form-label">
           <%= image_tag asset_pack_path('images/title_obake.png'), class: 'post-form-character' %>
@@ -79,6 +93,7 @@
 
     <div id="js-capture-area" class="capture">
       <capture-area :comic-title="formData.comicTitle"
+                    :volume-number="formData.volumeNumber"
                     :evaluation-point="formData.evaluationPoint"
                     :report="formData.report"
                     :emotions="formData.emotions"></capture-area>

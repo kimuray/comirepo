@@ -21,8 +21,14 @@
     &-comic-title {
       font-size: 1.1em;
       line-height: 1.5em;
-      width: 330px;
+      width: 270px;
       margin: 10px 0;
+    }
+
+    &-volume-number {
+      width: 50px;
+      margin-right: 5px;
+      margin-left: 15px;
     }
 
     &-emotions {

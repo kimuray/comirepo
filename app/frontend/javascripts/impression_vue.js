@@ -27,6 +27,7 @@ new Vue({
       report: '',
       captureImage: '',
       emotions: [],
+      volumeNumber: null,
     },
     postData: '',
     isDisplayShareMenu: false,
