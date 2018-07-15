@@ -1,0 +1,15 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+  border-top: 1px solid #546778;
+  @at-root {
+    &-contents {
+      width: 95%;
+    }
+
+    &-links {
+      margin-bottom: 10px;
+    }
+  }
+}

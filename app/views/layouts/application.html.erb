@@ -18,6 +18,16 @@
 
     <%= yield %>
 
+    <footer class="footer">
+      <div class="footer-contents">
+        <div class="footer-links">
+          <%= link_to 'トップページ', root_path %>
+          <%= link_to '利用規約', terms_path %>
+          <%= link_to 'お問い合わせ', new_inquiry_path %>
+        </div>
+        <span>Copyright © 2018 まんがのおばけ All Rights Reserved.</span>
+      </div>
+    </footer>
     <%= javascript_pack_tag 'application' %>
     <%= yield :load_vuejs %>
   </body>
