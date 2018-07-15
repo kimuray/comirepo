@@ -39,5 +39,13 @@ if (!!document.querySelector('#js-use-popup')) {
     data: {
       isDisplayPopup: false
     },
+    methods: {
+      openPopup() {
+        this.isDisplayPopup = true;
+      },
+      closePopup() {
+        this.isDisplayPopup = false;
+      },
+    }
   })
 }

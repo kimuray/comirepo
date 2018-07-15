@@ -3,5 +3,12 @@
     &-box {
       width: 100%;
     }
+
+    &-picture {
+      display: block;
+      width: 100%;
+      max-width: 320px;
+      margin: 0 auto 30px auto;
+    }
   }
 }
