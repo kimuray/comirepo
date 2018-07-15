@@ -51,7 +51,7 @@ export default {
   mounted() {
     setTimeout(() => {
       this.isWait = false;
-    }, 1000)
+    }, 1500)
   },
   methods: {
     closeMenu() {

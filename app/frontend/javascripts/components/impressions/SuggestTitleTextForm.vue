@@ -1,11 +1,15 @@
 <template>
-  <div class="siimple-grid-col siimple-grid-col--10 post-form-comic-title-form">
+  <div class="siimple-field post-form-comic-title-form">
+    <div class="siimple-form-field-label post-form-label">
+      漫画のタイトル / 巻数
+    </div>
+
     <input
       id="js-suggest-input"
       type="text"
       v-model="comicTitle"
       name="impression[comic_title]"
-      class="siimple-input post-form-fluid post-form-comic-input"
+      class="siimple-input post-form-fluid"
       placeholder="タイトルを入力してね！"
       @keyup="filterComicTitle"
       @keyup.enter="enterComicTitle"

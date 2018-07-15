@@ -15,28 +15,19 @@
   </share-menu-modal>
   <div class="post-form-container">
     <%= form_with model: @impression, url: api_impressions_path, local: true, html: { '@submit.prevent' => 'onSubmit' } do |form| %>
-      <div class="siimple-form-field">
-        <div class="siimple-form-field-label post-form-label">
-          漫画のタイトル
-        </div>
-        <div class="siimple-grid">
-          <div class="siimple-grid-row">
-            <suggest-title-text-form
-              :errors="errors.comicTitle"
-              :inspect-title="formData.comicTitle"
-              @change-title="changeTitle">
-            </suggest-title-text-form>
+      <suggest-title-text-form
+        :errors="errors.comicTitle"
+        :inspect-title="formData.comicTitle"
+        @change-title="changeTitle">
+      </suggest-title-text-form>
 
-            <div class="siimple-grid-col siimple-grid-col--2">
-              <input
-                type="number"
-                v-model="formData.volumeNumber"
-                name="impression[volume_number]"
-                class="siimple-input post-form-fluid"
-                placeholder="巻数" />
-            </div>
-          </div>
-        </div>
+      <div class="siimple-field">
+        <input
+          type="number"
+          v-model="formData.volumeNumber"
+          name="impression[volume_number]"
+          class="siimple-input post-form-fluid"
+          placeholder="第何巻を読んだ？数字をいれてね！" />
       </div>
       <br>
       <div class="siimple-form-field">
