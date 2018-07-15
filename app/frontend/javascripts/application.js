@@ -3,6 +3,8 @@ import ElementUI from 'element-ui';
 import Rails from 'rails-ujs';
 import 'element-ui/lib/theme-chalk/index.css';
 import 'stylesheets/application';
+import 'swiper/dist/css/swiper.css';
+import UseModal from './components/impressions/UseModal.vue';
 require.context('../images', true, /\.(png|jpg|jpeg|svg)$/);
 
 Rails.start();
@@ -26,4 +28,16 @@ if (!!document.querySelector('#js-alert')) {
       }, 3000);
     },
   });
+}
+
+if (!!document.querySelector('#js-use-popup')) {
+  new Vue({
+    el: '#js-use-popup',
+    components: {
+      UseModal,
+    },
+    data: {
+      isDisplayPopup: false
+    },
+  })
 }
