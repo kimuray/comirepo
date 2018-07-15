@@ -4,9 +4,18 @@
 
   @at-root {
     &-capture {
+      display: block;
       height: auto;
       width: 100%;
       object-fit: contain;
+      max-width: 600px;
+      margin: 0 auto 20px auto;
+    }
+
+    &-post-btn {
+      display: block;
+      max-width: 600px;
+      margin: 0 auto;
     }
   }
 }

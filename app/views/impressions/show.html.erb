@@ -15,6 +15,8 @@
   <h2 class="siimple-box-subtitle"><%= @impression.comic_title %>の感想</h1>
   <%= image_tag @impression.capture_url, class: 'show-capture' %>
   <div class="siimple-field">
-    <%= link_to '感想を投稿する', root_path, class: 'siimple-btn siimple-btn--blue' %>
+    <a href="<%= root_url %>" class="siimple-btn siimple-btn--blue show-post-btn">
+      あなたも感想を投稿してみよう<i>！</i>
+    </a>
   </div>
 </div>
