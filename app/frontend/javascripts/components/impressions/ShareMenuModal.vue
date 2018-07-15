@@ -38,7 +38,7 @@ export default {
     tweetUrl: function() {
       const baseText = `${this.postData.comic_title}を読みました！`;
       const url = this.postData.page_url;
-      const hashtags = `まんがのおばけ,${this.postData.comic_title}`
+      const hashtags = `まんがのおばけ`;
       const postUrl = `https://twitter.com/intent/tweet?text=${baseText}&url=${url}&hashtags=${hashtags}`;
       return postUrl;
     }

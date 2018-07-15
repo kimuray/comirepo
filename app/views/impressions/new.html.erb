@@ -23,6 +23,7 @@
           <div class="siimple-grid-row">
             <suggest-title-text-form
               :errors="errors.comicTitle"
+              :inspect-title="formData.comicTitle"
               @change-title="changeTitle">
             </suggest-title-text-form>
 
@@ -67,7 +68,7 @@
                   value="<%= emotion.id %>" />
                 <label for="emotion<%= emotion.id %>"></label>
               </div>
-              <label class="siimple-label"><%= emotion.name %></label>
+              <label class="siimple-label" for="emotion<%= emotion.id %>"><%= emotion.name %></label>
             </div>
           <% end %>
         </div>

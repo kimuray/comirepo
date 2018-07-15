@@ -75,6 +75,14 @@ new Vue({
     closeShareMenu() {
       this.isDisplayShareMenu = false;
       this.postData = '';
+      this.formData = {
+        comicTitle: '',
+        evaluationPoint: 0.0,
+        report: '',
+        captureImage: '',
+        emotions: [],
+        volumeNumber: null,
+      };
     },
   },
 });

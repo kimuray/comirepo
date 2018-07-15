@@ -30,6 +30,7 @@ import ComicsApi from '../../api/comics';
 export default {
   props: {
     errors: Object,
+    inspectTitle: String,
   },
   data() {
     return {
@@ -50,7 +51,13 @@ export default {
   watch: {
     comicTitle(val) {
       this.$emit('change-title', val);
-    }
+    },
+    // FIXME: comicTitleだけ独立したコンポーネントなのでpropsの変化を検知して空になったらの処理をする
+    inspectTitle(val) {
+      if (val === '') {
+        this.comicTitle = ''
+      }
+    },
   },
   created() {
     this.filterComicTitle = debounce((e) => {
