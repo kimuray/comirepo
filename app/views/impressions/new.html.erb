@@ -5,8 +5,8 @@
 <%= render 'eye_catch' %>
 
 <div id="js-impression-new" class="post-form">
-  <div class="post-form-modal" v-if="isModal">
-    <div class="siimple-spinner siimple-spinner--blue"></div>
+  <div class="modal" v-if="isModal">
+    <div class="siimple-spinner siimple-spinner--pink siimple-spinner--large"></div>
   </div>
   <share-menu-modal
     :post-data="postData"
@@ -94,7 +94,7 @@
           id="js-impression-submit"
           value="感想を投稿する"
           data-disable-with="感想を投稿する"
-          class="siimple-btn siimple-btn--blue post-form-button" />
+          class="siimple-btn btn--primary post-form-button" />
       </div>
     <% end %>
 

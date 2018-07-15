@@ -15,14 +15,14 @@
       <div class="modal-field">
         <a
           :href="postData.capture_url"
-          class="siimple-btn siimple-btn--blue modal-share-btn"
+          class="siimple-btn siimple-btn--grey modal-share-btn"
           download="capture">
           画像をダウンロード
         </a>
       </div>
       <div class="modal-field">
         <a
-          class="siimple-btn siimple-btn--gray modal-share-btn"
+          class="siimple-btn modal-share-btn"
           @click="closeMenu">
           閉じる
         </a>

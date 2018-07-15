@@ -1,0 +1,8 @@
+.tag {
+  @at-root {
+    &--primary {
+      background-color: #ff586e;
+      color: #fff;
+    }
+  }
+}

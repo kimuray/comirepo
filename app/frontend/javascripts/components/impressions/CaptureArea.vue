@@ -19,9 +19,9 @@
       <span class="capture-field-title">読んだあとの気持ち</span>
       <div class="capture-emotions">
         <label v-for="emotion in emotionList"
-               class="capture-tag siimple-tag siimple-tag--teal hide"
+               class="capture-tag siimple-tag tag--primary hide"
                :data-emotion-id="emotion.id">{{ emotion.name }}</label>
-        <label v-if="nothingEmotions" class="capture-tag siimple-tag siimple-tag--teal">
+        <label v-if="nothingEmotions" class="capture-tag siimple-tag tag--primary">
           特になし
         </label>
       </div>
