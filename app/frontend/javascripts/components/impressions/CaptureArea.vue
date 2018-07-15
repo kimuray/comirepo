@@ -32,7 +32,7 @@
       <p class="capture-report">{{ report }}</p>
     </div>
 
-    <img src="../../../images/logo.png" height="40" width="225" />
+    <img src="../../../images/card_logo.png" height="80" width="300" />
   </div>
 </template>
 
