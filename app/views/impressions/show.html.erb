@@ -14,10 +14,4 @@
 <div class="show">
   <h2 class="siimple-box-subtitle"><%= @impression.comic_title %>の感想</h1>
   <%= image_tag @impression.capture_url, class: 'show-capture' %>
-  <div class="siimple-box siimple-box--blue users-box">
-    <%= image_tag @impression.user.avater, class: 'users-image' %>
-    <h1 class="siimple-box-subtitle"><%= @impression.user.nickname %></h1>
-    <p>頑張って投稿していきます</p>
-    <%= link_to "#{@impression.user.nickname}さんのページ", user_path(@impression.user), class: 'siimple-btn siimple-btn--grey' %>
-  </div>
 </div>
