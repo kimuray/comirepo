@@ -1,6 +1,7 @@
 <template>
   <div class="modal">
-    <div class="modal-menu">
+    <div v-if="isWait" class="siimple-spinner siimple-spinner--pink siimple-spinner--large"></div>
+    <div v-else class="modal-menu">
       <div class="use-image-box">
         <swiper :options="swiperOption">
           <swiper-slide>
@@ -36,12 +37,19 @@ export default {
   },
   data() {
     return {
+      isWait: true,
       swiperOption: {
         pagination: {
           el: '.swiper-pagination'
         }
       }
     }
+  },
+  create() {
+    this.isWait = true;
+  },
+  mounted() {
+    this.isWait = false;
   },
   methods: {
     closeMenu() {
