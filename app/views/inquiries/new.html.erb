@@ -2,9 +2,6 @@
 <br>
 <div class="post-form">
   <div class="post-form-container">
-    <p class="post-form-description">
-      原則5営業日以内に返信させていただきます。お時間をいただく場合、一時返答となる場合がございますのでご了承ください。
-    </p>
     <%= form_with model: @inquiry, url: inquiries_path, local: true do |form| %>
       <% if @inquiry.errors.any? %>
         <div class="siimple-form-field">

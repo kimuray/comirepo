@@ -1,6 +1,6 @@
 <template>
   <div class="modal">
-    <div v-if="isWait" class="siimple-spinner siimple-spinner--pink siimple-spinner--large"></div>
+    <div v-if="isWait" class="siimple-spinner siimple-spinner--pink"></div>
     <div v-else class="modal-menu">
       <div class="use-image-box">
         <swiper :options="swiperOption">
@@ -51,7 +51,7 @@ export default {
   mounted() {
     setTimeout(() => {
       this.isWait = false;
-    }, 1500)
+    }, 1000)
   },
   methods: {
     closeMenu() {
