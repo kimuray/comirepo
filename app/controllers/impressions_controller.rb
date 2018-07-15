@@ -1,5 +1,9 @@
 class ImpressionsController < ApplicationController
   before_action -> { correct_user(@impression.user) }, only: :destroy
+  before_action :set_impression, only: :show
+
+  def show
+  end
 
   def new
     @impression = Impression.new
