@@ -83,6 +83,8 @@ new Vue({
         emotions: [],
         volumeNumber: null,
       };
+      const submitBtn = document.getElementById('js-impression-submit');
+      submitBtn.disabled = '';
     },
   },
 });

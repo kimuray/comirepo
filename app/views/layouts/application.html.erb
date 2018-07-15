@@ -7,6 +7,17 @@
     <%= favicon_link_tag('/favicon.ico') %>
     <%= display_meta_tags(default_meta_tags) %>
     <%= stylesheet_pack_tag 'application', media: 'all' %>
+    <% if Rails.env.production? %>
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122321738-1"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-122321738-1');
+      </script>
+    <% end %>
   </head>
 
   <body>
