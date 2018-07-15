@@ -5,7 +5,7 @@
   </p>
   <div id="js-use-popup" class="top-eye-catch">
     <%= image_tag asset_pack_path('images/top_image.png'), class: 'top-eye-catch-image' %>
-    <a href="javascript:void(0)" @click="openPopup" class="siimple-btn siimple-btn--blue">使い方はこちら</a>
+    <a href="javascript:void(0)" @click="openPopup" class="siimple-btn top-use-btn">使い方はこちら<i>!</i></a>
     <use-modal v-if="isDisplayPopup" @close="closePopup"></use-modal>
   </div>
 </section>

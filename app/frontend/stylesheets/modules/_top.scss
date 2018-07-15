@@ -29,5 +29,14 @@
     &-use-guide {
       margin: 0 auto;
     }
+
+    &-use-btn {
+      background-color: #ff586e;
+      color: #fff;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
   }
 }

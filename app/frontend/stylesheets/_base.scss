@@ -28,3 +28,7 @@ html,body {
 .mb-30 {
   margin-bottom: 30px;
 }
+
+.siimple-checkbox input[type=checkbox]:checked + label {
+  background-color: #ff586e;
+}
