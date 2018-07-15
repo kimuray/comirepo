@@ -41,7 +41,7 @@
       display: flex;
       justify-content: flex-start;
       align-items: center;
-      margin-bottom: 1.5em;
+      margin-bottom: 1em;
     }
 
     &-balloon {
@@ -66,6 +66,10 @@
         -webkit-transform: rotate(-20deg);
         transform: rotate(-20deg);
       }
+    }
+
+    &-comic-input {
+      width: 90%;
     }
 
     &-emotions-item {

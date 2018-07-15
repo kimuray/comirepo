@@ -15,29 +15,32 @@
   </share-menu-modal>
   <div class="post-form-container">
     <%= form_with model: @impression, url: api_impressions_path, local: true, html: { '@submit.prevent' => 'onSubmit' } do |form| %>
-      <suggest-title-text-form
-        :errors="errors.comicTitle"
-        @change-title="changeTitle">
-      </suggest-title-text-form>
-      <br>
-
-      <div class="siimple-form-field mb-30">
+      <div class="siimple-form-field">
         <div class="siimple-form-field-label post-form-label">
-          <%= image_tag asset_pack_path('images/obake_icon.png'), class: 'post-form-character' %>
-          <span class="post-form-balloon">読んだ単行本を巻数を教えてね！</span>
+          まんがのタイトル
         </div>
-        <input
-          type="number"
-          v-model="formData.volumeNumber"
-          name="impression[volume_number]"
-          class="siimple-input post-form-fluid"
-          placeholder="単行本の巻数を入力してね！" />
+        <div class="siimple-grid">
+          <div class="siimple-grid-row">
+            <suggest-title-text-form
+              :errors="errors.comicTitle"
+              @change-title="changeTitle">
+            </suggest-title-text-form>
+
+            <div class="siimple-grid-col siimple-grid-col--2">
+              <input
+                type="number"
+                v-model="formData.volumeNumber"
+                name="impression[volume_number]"
+                class="siimple-input post-form-fluid"
+                placeholder="巻数" />
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="siimple-form-field mb-30">
+      <div class="siimple-form-field">
         <div class="siimple-form-field-label post-form-label">
-          <%= image_tag asset_pack_path('images/obake_icon.png'), class: 'post-form-character' %>
-          <span class="post-form-balloon">おすすめ度はどのくらい？</span>
+          おすすめ度
         </div>
         <div class="post-form-emotions">
           <div class="post-form-emotions-field">
@@ -49,10 +52,9 @@
         </div>
       </div>
       <br>
-      <div class="siimple-form-field mb-30">
+      <div class="siimple-form-field">
         <div class="siimple-form-field-label post-form-label">
-          <%= image_tag asset_pack_path('images/obake_icon.png'), class: 'post-form-character' %>
-          <span class="post-form-balloon">読んだ後の気持ちは？</span>
+          読んだ後の気持ち
         </div>
         <div class="post-form-emotions">
           <% Emotion.order(:id).each do |emotion| %>
@@ -71,10 +73,9 @@
         </div>
       </div>
       <br>
-      <div class="siimple-form-field mb-30">
+      <div class="siimple-form-field">
         <div class="siimple-form-field-label post-form-label">
-          <%= image_tag asset_pack_path('images/obake_icon.png'), class: 'post-form-character' %>
-          <span class="post-form-balloon">感想をおしえて！</span>
+          感想
         </div>
         <textarea
           v-model="formData.report"
