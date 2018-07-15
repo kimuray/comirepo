@@ -1,5 +1,4 @@
 class Impression < ApplicationRecord
-  belongs_to :user
   belongs_to :comic
   has_many :selecting_emotions, dependent: :destroy
   has_many :emotions, through: :selecting_emotions
