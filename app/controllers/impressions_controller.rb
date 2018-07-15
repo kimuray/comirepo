@@ -1,10 +1,5 @@
 class ImpressionsController < ApplicationController
-  before_action :authenticate_user!, except: :show
-  before_action :set_impression, except: :new
   before_action -> { correct_user(@impression.user) }, only: :destroy
-
-  def show
-  end
 
   def new
     @impression = Impression.new

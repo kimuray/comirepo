@@ -1,6 +1,4 @@
 class Api::ImpressionsController < ApplicationController
-  before_action :set_twitter_api, only: :create
-
   def create
     @impression = Impression.new(impression_params)
     if @impression.set_comic_and_save
