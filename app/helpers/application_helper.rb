@@ -1,8 +1,8 @@
 module ApplicationHelper
   def default_meta_tags
     {
-      site: 'まんがのおばけ',
       title: 'まんがのおばけ',
+      site: '漫画感想シェアサービス',
       reverse: true,
       charset: 'utf-8',
       description: '漫画の感想をフォロワーに向けて発信するサービスです。漫画は他人と感想を共有してこそ面白い！',
@@ -14,7 +14,7 @@ module ApplicationHelper
       #   { href: image_url('icon.jpg'), rel: 'apple-touch-icon', sizes: '180x180', type: 'image/jpg' },
       ],
       og: {
-        site_name: 'まんがのおばけ',
+        site_name: '漫画感想シェアサービス',
         title: 'まんがのおばけ',
         description: '漫画の感想をフォロワーに向けて発信するサービスです。漫画は他人と感想を共有してこそ面白い！',
         type: 'website',
