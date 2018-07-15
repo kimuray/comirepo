@@ -6,7 +6,7 @@
       </div>
       <div class="modal-field">
         <a
-          href="https://twitter.com/intent/tweet"
+          :href="tweetUrl"
           class="siimple-btn siimple-btn--blue modal-share-btn"
           target="_blank">
            Twitterでシェア
@@ -34,6 +34,15 @@
 <script>
 export default {
   props: ['postData'],
+  computed: {
+    tweetUrl: function() {
+      const baseText = `${this.postData.comic_title}を読みました！`;
+      const url = this.postData.page_url;
+      const hashtags = `まんがのおばけ,${this.postData.comic_title}`
+      const postUrl = `https://twitter.com/intent/tweet?text=${baseText}&url=${url}&hashtags=${hashtags}`;
+      return postUrl;
+    }
+  },
   methods: {
     closeMenu() {
       this.$emit('close-menu');
