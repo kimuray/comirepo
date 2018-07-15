@@ -1,0 +1,45 @@
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1000;
+  background-color:rgba(0,0,0,0.8);
+
+  @at-root {
+    &-menu {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      width: 90%;
+      background-color: #fff;
+      padding: 10px;
+    }
+
+    &-field {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+
+    &-share-btn {
+      display: block;
+    }
+
+    &-share-image {
+      margin-bottom: 20px;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+body {
+  overflow: hidden;
+}

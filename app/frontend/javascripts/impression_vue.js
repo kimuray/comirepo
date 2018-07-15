@@ -3,6 +3,7 @@ import html2canvas from 'html2canvas';
 import StarRating from 'vue-star-rating'
 import CaptureArea from './components/impressions/CaptureArea.vue';
 import SuggestTitleTextForm from './components/impressions/SuggestTitleTextForm';
+import ShareMenuModal from './components/impressions/ShareMenuModal';
 import ImpressionApi from './api/impressions';
 
 new Vue({
@@ -11,6 +12,7 @@ new Vue({
     StarRating,
     CaptureArea,
     SuggestTitleTextForm,
+    ShareMenuModal,
   },
   data: {
     isModal: false,
