@@ -1,7 +1,7 @@
 <template>
   <div class="siimple-form-field post-form-comic-title-form">
     <div class="siimple-form-field-label post-form-label">
-      <img src="../../../images/title_obake.png" class="post-form-character" />
+      <img src="../../../images/obake_icon.png" class="post-form-character" />
       <span class="post-form-balloon">まんがのタイトルをおしえて！</span>
     </div>
     <input

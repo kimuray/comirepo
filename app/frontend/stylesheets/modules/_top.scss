@@ -1,72 +1,34 @@
 .top {
-  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
   background-color: #b3bceb;
+  padding: 20px 0;
 
   @at-root {
-    &-container {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+    &-message {
+      width: 100%;
+      text-align: center;
+      font-size: 1.3em;
+      line-height: 1.5;
+      color: #fff;
     }
 
-    &-description {
-      color: #fff;
-      font-size: 2em;
-      margin-bottom: 50px;
-      line-height: 1.3em;
+    &-eye-catch {
       text-align: center;
     }
 
-    &-logo {
-      position: relative;
+    &-eye-catch-image {
+      display: block;
+      width: 100%;
+      max-width: 500px;
+      min-width: 380px;
+      height: auto;
     }
 
-    &-logo-image {
-      max-width: 480px;
+    &-use-guide {
+      margin: 0 auto;
     }
-
-    &-logo-mascot {
-      position: absolute;
-      left: -80px;
-      top: 120px;
-      height: 240px;
-      width: 180px;
-    }
-
-    &-login {
-      margin: 50px 0 0 0;
-    }
-
-    &-login-btn {
-      font-size: 1.2em;
-      padding: 0.5em 1.5em;
-      font-weight: bold;
-    }
-  }
-}
-
-@media screen and(max-width: 480px) {
-  .top-logo-image {
-    display: block;
-    width: 95%;
-    margin: 0 auto;
-  }
-
-  .top-description {
-    font-size: 1.5em;
-  }
-
-  .top-login-btn {
-    font-size: 1em;
-    padding: 0.5em 1em;
-  }
-
-  .top-logo-mascot {
-    left: 0px;
-    top: 120px;
-    height: 120px;
-    width: 90px;
   }
 }
