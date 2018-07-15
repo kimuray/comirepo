@@ -28,6 +28,8 @@ new Vue({
       captureImage: '',
       emotions: [],
     },
+    postData: '',
+    isDisplayShareMenu: false,
     errors: {
       comicTitle: {
         hasError: false,
@@ -54,8 +56,9 @@ new Vue({
       this.formData.captureImage = canvas.toDataURL();
       ImpressionApi.create(this.formData)
         .then(res => {
+          this.isDisplayShareMenu = true;
+          this.postData = res.data;
           this.isModal = false;
-          window.location.href = `/impressions/${res.data.id}`;
         })
         .catch(err => {
           this.isModal = false;
@@ -67,6 +70,10 @@ new Vue({
     },
     changeTitle(title) {
       this.formData.comicTitle = title;
+    },
+    closeShareMenu() {
+      this.isDisplayShareMenu = false;
+      this.postData = '';
     },
   },
 });

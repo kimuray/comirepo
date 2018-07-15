@@ -5,7 +5,7 @@ class Api::ImpressionsController < ApplicationController
     @impression = current_user.impressions.build(impression_params)
     if @impression.set_comic_and_save
       # @twitter_api.tweet(post_message)
-      render json: @impression
+      render :post
     else
       render json: optimize_error_response(@impression.errors), status: 422
     end

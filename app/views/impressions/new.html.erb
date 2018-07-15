@@ -8,7 +8,11 @@
   <div class="post-form-modal" v-if="isModal">
     <div class="siimple-spinner siimple-spinner--blue"></div>
   </div>
-  <share-menu-modal></share-menu-modal>
+  <share-menu-modal
+    :post-data="postData"
+    @close-menu="closeShareMenu"
+    v-if="isDisplayShareMenu">
+  </share-menu-modal>
   <div class="post-form-container">
     <%= form_with model: @impression, url: api_impressions_path, local: true, html: { '@submit.prevent' => 'onSubmit' } do |form| %>
       <suggest-title-text-form
