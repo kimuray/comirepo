@@ -1,5 +1,5 @@
 <template>
-  <div class="siimple-grid-col siimple-grid-col--10">
+  <div class="siimple-grid-col siimple-grid-col--10 post-form-comic-title-form">
     <input
       id="js-suggest-input"
       type="text"
