@@ -3,7 +3,7 @@ import { csrfToken } from 'rails-ujs';
 
 export const axios = axiosBase.create({
   // baseURL: 'http://localhost:3000/api',
-  baseURL: 'https://kuriyama-app.work/api',
+  baseURL: 'https://mangaobake.net/api',
   responseType: 'json',
   headers: {
     'X-CSRF-Token': csrfToken(),
