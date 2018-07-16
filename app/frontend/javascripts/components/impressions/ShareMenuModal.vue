@@ -16,7 +16,8 @@
         <a
           :href="postData.capture_url"
           class="siimple-btn siimple-btn--grey modal-share-btn"
-          download="capture">
+          download="capture"
+          target="_blank">
           画像をダウンロード
         </a>
       </div>
